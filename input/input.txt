@@ -1,0 +1,10 @@
+my_seq = DNA"ATGCGTACG";
+
+
+len = length(my_seq);
+gc  = gc_content(my_seq);
+rev = reverse_complement(my_seq);
+
+IF gc > 0.5 THEN
+    PRINT("Alta proporción de GC");
+END;

@@ -9,7 +9,6 @@ program: statement+ EOF;
 statement: import_stmt
          | assignment_stmt
          | query_stmt
-         | pipeline_stmt
          | ';'
          ;
 
@@ -49,22 +48,6 @@ select_clause: 'SELECT' select_list;
 select_list: select_item (',' select_item)*;
 select_item: expression ('AS' ID)?;
 limit_clause: 'LIMIT' NUMBER;
-
-// ============================================================================
-// PIPELINES
-// ============================================================================
-
-pipeline_stmt: pipeline_source pipeline_step+ ';';
-pipeline_source: 'sequences' 'FROM' source;
-
-pipeline_step: '|>' pipeline_op;
-
-pipeline_op: 'FILTER' condition
-           | 'MAP' expression
-           | 'TAKE' NUMBER
-           | 'SORT_BY' expression
-           | 'EXPORT' STRING
-           ;
 
 // ============================================================================
 // CONDICIONES Y EXPRESIONES
