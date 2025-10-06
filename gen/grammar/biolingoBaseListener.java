@@ -64,13 +64,73 @@ public class biolingoBaseListener implements biolingoListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSequence_literal(biolingoParser.Sequence_literalContext ctx) { }
+	@Override public void enterPrint_stmt(biolingoParser.Print_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSequence_literal(biolingoParser.Sequence_literalContext ctx) { }
+	@Override public void exitPrint_stmt(biolingoParser.Print_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTrain_markov_stmt(biolingoParser.Train_markov_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTrain_markov_stmt(biolingoParser.Train_markov_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFind_genes_stmt(biolingoParser.Find_genes_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFind_genes_stmt(biolingoParser.Find_genes_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMarkov_config(biolingoParser.Markov_configContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMarkov_config(biolingoParser.Markov_configContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMarkov_params(biolingoParser.Markov_paramsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMarkov_params(biolingoParser.Markov_paramsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMarkov_param(biolingoParser.Markov_paramContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMarkov_param(biolingoParser.Markov_paramContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -83,18 +143,6 @@ public class biolingoBaseListener implements biolingoListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitQuery_stmt(biolingoParser.Query_stmtContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterTarget(biolingoParser.TargetContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitTarget(biolingoParser.TargetContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -172,54 +220,6 @@ public class biolingoBaseListener implements biolingoListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPipeline_stmt(biolingoParser.Pipeline_stmtContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitPipeline_stmt(biolingoParser.Pipeline_stmtContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterPipeline_source(biolingoParser.Pipeline_sourceContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitPipeline_source(biolingoParser.Pipeline_sourceContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterPipeline_step(biolingoParser.Pipeline_stepContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitPipeline_step(biolingoParser.Pipeline_stepContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterPipeline_op(biolingoParser.Pipeline_opContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitPipeline_op(biolingoParser.Pipeline_opContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterCondition(biolingoParser.ConditionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -263,18 +263,6 @@ public class biolingoBaseListener implements biolingoListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExpression(biolingoParser.ExpressionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSeq_type(biolingoParser.Seq_typeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSeq_type(biolingoParser.Seq_typeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -328,13 +316,13 @@ public class biolingoBaseListener implements biolingoListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBio_func(biolingoParser.Bio_funcContext ctx) { }
+	@Override public void enterBasic_func(biolingoParser.Basic_funcContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBio_func(biolingoParser.Bio_funcContext ctx) { }
+	@Override public void exitBasic_func(biolingoParser.Basic_funcContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -371,6 +359,18 @@ public class biolingoBaseListener implements biolingoListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitPercentage(biolingoParser.PercentageContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSequence_literal(biolingoParser.Sequence_literalContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSequence_literal(biolingoParser.Sequence_literalContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

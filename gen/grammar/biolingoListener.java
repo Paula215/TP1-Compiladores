@@ -47,15 +47,65 @@ public interface biolingoListener extends ParseTreeListener {
 	 */
 	void exitAssignment_stmt(biolingoParser.Assignment_stmtContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link biolingoParser#sequence_literal}.
+	 * Enter a parse tree produced by {@link biolingoParser#print_stmt}.
 	 * @param ctx the parse tree
 	 */
-	void enterSequence_literal(biolingoParser.Sequence_literalContext ctx);
+	void enterPrint_stmt(biolingoParser.Print_stmtContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link biolingoParser#sequence_literal}.
+	 * Exit a parse tree produced by {@link biolingoParser#print_stmt}.
 	 * @param ctx the parse tree
 	 */
-	void exitSequence_literal(biolingoParser.Sequence_literalContext ctx);
+	void exitPrint_stmt(biolingoParser.Print_stmtContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link biolingoParser#train_markov_stmt}.
+	 * @param ctx the parse tree
+	 */
+	void enterTrain_markov_stmt(biolingoParser.Train_markov_stmtContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link biolingoParser#train_markov_stmt}.
+	 * @param ctx the parse tree
+	 */
+	void exitTrain_markov_stmt(biolingoParser.Train_markov_stmtContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link biolingoParser#find_genes_stmt}.
+	 * @param ctx the parse tree
+	 */
+	void enterFind_genes_stmt(biolingoParser.Find_genes_stmtContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link biolingoParser#find_genes_stmt}.
+	 * @param ctx the parse tree
+	 */
+	void exitFind_genes_stmt(biolingoParser.Find_genes_stmtContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link biolingoParser#markov_config}.
+	 * @param ctx the parse tree
+	 */
+	void enterMarkov_config(biolingoParser.Markov_configContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link biolingoParser#markov_config}.
+	 * @param ctx the parse tree
+	 */
+	void exitMarkov_config(biolingoParser.Markov_configContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link biolingoParser#markov_params}.
+	 * @param ctx the parse tree
+	 */
+	void enterMarkov_params(biolingoParser.Markov_paramsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link biolingoParser#markov_params}.
+	 * @param ctx the parse tree
+	 */
+	void exitMarkov_params(biolingoParser.Markov_paramsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link biolingoParser#markov_param}.
+	 * @param ctx the parse tree
+	 */
+	void enterMarkov_param(biolingoParser.Markov_paramContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link biolingoParser#markov_param}.
+	 * @param ctx the parse tree
+	 */
+	void exitMarkov_param(biolingoParser.Markov_paramContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link biolingoParser#query_stmt}.
 	 * @param ctx the parse tree
@@ -66,16 +116,6 @@ public interface biolingoListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitQuery_stmt(biolingoParser.Query_stmtContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link biolingoParser#target}.
-	 * @param ctx the parse tree
-	 */
-	void enterTarget(biolingoParser.TargetContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link biolingoParser#target}.
-	 * @param ctx the parse tree
-	 */
-	void exitTarget(biolingoParser.TargetContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link biolingoParser#source}.
 	 * @param ctx the parse tree
@@ -137,46 +177,6 @@ public interface biolingoListener extends ParseTreeListener {
 	 */
 	void exitLimit_clause(biolingoParser.Limit_clauseContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link biolingoParser#pipeline_stmt}.
-	 * @param ctx the parse tree
-	 */
-	void enterPipeline_stmt(biolingoParser.Pipeline_stmtContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link biolingoParser#pipeline_stmt}.
-	 * @param ctx the parse tree
-	 */
-	void exitPipeline_stmt(biolingoParser.Pipeline_stmtContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link biolingoParser#pipeline_source}.
-	 * @param ctx the parse tree
-	 */
-	void enterPipeline_source(biolingoParser.Pipeline_sourceContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link biolingoParser#pipeline_source}.
-	 * @param ctx the parse tree
-	 */
-	void exitPipeline_source(biolingoParser.Pipeline_sourceContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link biolingoParser#pipeline_step}.
-	 * @param ctx the parse tree
-	 */
-	void enterPipeline_step(biolingoParser.Pipeline_stepContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link biolingoParser#pipeline_step}.
-	 * @param ctx the parse tree
-	 */
-	void exitPipeline_step(biolingoParser.Pipeline_stepContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link biolingoParser#pipeline_op}.
-	 * @param ctx the parse tree
-	 */
-	void enterPipeline_op(biolingoParser.Pipeline_opContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link biolingoParser#pipeline_op}.
-	 * @param ctx the parse tree
-	 */
-	void exitPipeline_op(biolingoParser.Pipeline_opContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link biolingoParser#condition}.
 	 * @param ctx the parse tree
 	 */
@@ -216,16 +216,6 @@ public interface biolingoListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExpression(biolingoParser.ExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link biolingoParser#seq_type}.
-	 * @param ctx the parse tree
-	 */
-	void enterSeq_type(biolingoParser.Seq_typeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link biolingoParser#seq_type}.
-	 * @param ctx the parse tree
-	 */
-	void exitSeq_type(biolingoParser.Seq_typeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link biolingoParser#expr_list}.
 	 * @param ctx the parse tree
@@ -267,15 +257,15 @@ public interface biolingoListener extends ParseTreeListener {
 	 */
 	void exitFunc_name(biolingoParser.Func_nameContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link biolingoParser#bio_func}.
+	 * Enter a parse tree produced by {@link biolingoParser#basic_func}.
 	 * @param ctx the parse tree
 	 */
-	void enterBio_func(biolingoParser.Bio_funcContext ctx);
+	void enterBasic_func(biolingoParser.Basic_funcContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link biolingoParser#bio_func}.
+	 * Exit a parse tree produced by {@link biolingoParser#basic_func}.
 	 * @param ctx the parse tree
 	 */
-	void exitBio_func(biolingoParser.Bio_funcContext ctx);
+	void exitBasic_func(biolingoParser.Basic_funcContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link biolingoParser#agg_func}.
 	 * @param ctx the parse tree
@@ -306,4 +296,14 @@ public interface biolingoListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPercentage(biolingoParser.PercentageContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link biolingoParser#sequence_literal}.
+	 * @param ctx the parse tree
+	 */
+	void enterSequence_literal(biolingoParser.Sequence_literalContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link biolingoParser#sequence_literal}.
+	 * @param ctx the parse tree
+	 */
+	void exitSequence_literal(biolingoParser.Sequence_literalContext ctx);
 }

@@ -1,58 +1,68 @@
 grammar biolingo;
+// PROGRAMA PRINCIPAL
+program: stmt+ EOF;
 
-// ============================================================================
-// PROGRAMA
-// ============================================================================
-
-program: statement+ EOF;
-
-statement: import_stmt
+stmt: import_stmt
          | assignment_stmt
          | query_stmt
+         | find_genes_stmt
+         | train_markov_stmt
+         | print_stmt
          | ';'
          ;
 
-// ============================================================================
-// IMPORTS Y ASIGNACIONES
-// ============================================================================
-
+// IMPORTS
 import_stmt: 'IMPORT' STRING ('AS' ID)? ';';
+
+// ASIGNACIONES
 assignment_stmt: ID '=' expression ';';
 
-// ============================================================================
-// SECUENCIAS (literales nativos)
-// ============================================================================
+// PRINT
+print_stmt: 'PRINT' expression ';';
 
-sequence_literal: DNA_SEQ | RNA_SEQ | PROTEIN_SEQ;
+// CADENAS DE MARKOV - COMANDOS PRINCIPALES
+// Entrenar modelo de Markov con secuencias anotadas
+train_markov_stmt: 'TRAIN_MARKOV' 'ON' source 
+                   ('WITH' markov_params)?
+                   ';';
 
-DNA_SEQ: 'DNA' '"' [ATCGN]+ '"';
-RNA_SEQ: 'RNA' '"' [AUCGN]+ '"';
-PROTEIN_SEQ: 'PROTEIN' '"' [ACDEFGHIKLMNPQRSTVWY*]+ '"';
+// Encontrar genes usando el modelo de Markov
+find_genes_stmt: 'FIND_GENES' 'IN' expression 
+                 ('USING' markov_config)?
+                 ';';
 
-// ============================================================================
-// CONSULTAS
-// ============================================================================
+markov_config: 'markov' ('(' markov_params ')')?;
 
-query_stmt: 'FIND' target 
+markov_params: markov_param (',' markov_param)*;
+
+markov_param: 'order' '=' NUMBER              // Orden del modelo (1, 2, 3)
+            | 'threshold' '=' NUMBER          // Umbral de probabilidad
+            | 'min_length' '=' NUMBER         // Longitud mínima de gen
+            | 'model' '=' STRING              // Archivo de modelo pre-entrenado
+            | 'window' '=' NUMBER             // Tamaño de ventana para análisis
+            ;
+
+// CONSULTAS BÁSICAS (FIND)
+query_stmt: 'FIND' 'sequences' 
             'FROM' source 
             where_clause? 
             select_clause?
             limit_clause? 
             ';';
 
-target: 'sequences' | 'genes' | 'proteins';
 source: STRING | ID;
 
 where_clause: 'WHERE' condition;
+
 select_clause: 'SELECT' select_list;
+
 select_list: select_item (',' select_item)*;
+
 select_item: expression ('AS' ID)?;
+
 limit_clause: 'LIMIT' NUMBER;
 
-// ============================================================================
-// CONDICIONES Y EXPRESIONES
-// ============================================================================
-
+// CONDICIONES (WHERE)
 condition: condition 'AND' condition
          | condition 'OR' condition
          | 'NOT' condition
@@ -62,55 +72,55 @@ condition: condition 'AND' condition
 
 comparison: expression comp_op expression
           | expression 'CONTAINS' expression
-          | expression 'MATCHES' STRING
+          | expression 'BETWEEN' expression 'AND' expression
+          | expression 'IN' '(' expr_list ')'
           ;
 
 comp_op: '=' | '!=' | '<' | '<=' | '>' | '>=';
 
-// ============================================================================
-// EXPRESIONES
-// ============================================================================
-
-expression: expression '=>' seq_type
-          | expression ('*' | '/' | '%') expression
-          | expression ('+' | '-') expression
-          | expression '.' ID
-          | '-' expression
-          | '(' expression ')'
-          | function_call
-          | literal
-          | ID
+// EXPRESIONES (con precedencia correcta)
+expression: expression ('*' | '/' | '%') expression    // Multiplicación, división
+          | expression ('+' | '-') expression          // Suma, resta
+          | expression '.' ID                          // Acceso a campo (gene.length)
+          | '~' expression                             // Complemento
+          | '<-' expression                            // Reversa
+          | '~<-' expression                           // Complemento reverso
+          | '-' expression                             // Negación aritmética
+          | '(' expression ')'                         // Agrupación
+          | function_call                              // Llamada a función
+          | literal                                    // Literales
+          | ID                                         // Identificadores
           ;
 
-seq_type: 'DNA' | 'RNA' | 'PROTEIN';
 expr_list: expression (',' expression)*;
 
-// ============================================================================
-// FUNCIONES BIOLÓGICAS (core)
-// ============================================================================
-
+// FUNCIONES (Solo 5 básicas)
 function_call: func_name '(' arg_list? ')';
+
 arg_list: expression (',' expression)*;
 
-func_name: bio_func | agg_func | ID;
+func_name: basic_func 
+         | agg_func 
+         | ID                    
+         ;
 
-bio_func: 'length'
-        | 'gc_content'
-        | 'complement'
-        | 'reverse_complement'
-        | 'translate'
-        | 'transcribe'
-        | 'reverse'
-        | 'molecular_weight'
-        | 'melting_temp'
+// Funciones biológicas básicas
+basic_func: 'length'             // Longitud de secuencia
+          | 'gc_content'         // Contenido GC (%)
+          | 'complement'         // Complemento de DNA/RNA
+          | 'reverse'            // Reversa de secuencia
+          | 'translate'          // DNA -> Proteína
+          ;
+
+// Funciones de agregación
+agg_func: 'COUNT' 
+        | 'AVG' 
+        | 'MIN' 
+        | 'MAX' 
+        | 'SUM'
         ;
 
-agg_func: 'COUNT' | 'AVG' | 'MIN' | 'MAX' | 'SUM';
-
-// ============================================================================
-// LITERALES Y TOKENS
-// ============================================================================
-
+// LITERALES
 literal: NUMBER
        | STRING
        | BOOLEAN
@@ -119,12 +129,26 @@ literal: NUMBER
        ;
 
 percentage: NUMBER '%';
+
+// Secuencias tipadas
+sequence_literal: DNA_SEQ | RNA_SEQ | PROTEIN_SEQ;
+
+DNA_SEQ: 'DNA' '"' [ATCGN]+ '"';
+RNA_SEQ: 'RNA' '"' [AUCGN]+ '"';
+PROTEIN_SEQ: 'PROTEIN' '"' [ACDEFGHIKLMNPQRSTVWY*]+ '"';
+
+// TOKENS BÁSICOS
 BOOLEAN: 'true' | 'false' | 'TRUE' | 'FALSE';
+
 NUMBER: [0-9]+ ('.' [0-9]+)?;
+
 STRING: '"' (~["\\\r\n] | '\\' .)* '"';
+
 ID: [a-zA-Z_][a-zA-Z0-9_]*;
 
-// Comentarios y espacios
-COMMENT: '--' ~[\r\n]* -> skip;
+// COMENTARIOS Y ESPACIOS
+LINE_COMMENT: '--' ~[\r\n]* -> skip;
+
 BLOCK_COMMENT: '/*' .*? '*/' -> skip;
+
 WS: [ \t\r\n]+ -> skip;
