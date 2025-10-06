@@ -1,7 +1,7 @@
 # TP1-Compiladores
 
 
-# Biolingo - Funciones y Casos de Prueba
+# Biolingo - Funciones 
 
 ## 1. Funciones del Proyecto
 
