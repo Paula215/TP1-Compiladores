@@ -118,3 +118,4 @@ java -cp build:lib/antlr-4.13.2-complete.jar org.antlr.v4.gui.TestRig biolingo p
 ```
 
 Si en algún momento necesitas generar para C++ u otros lenguajes, ajusta la opción `-Dlanguage=` y el directorio de salida.
+Si en algún momento necesitas generar para C++ u otros lenguajes, ajusta la opción `-Dlanguage=` y el directorio de salida.
