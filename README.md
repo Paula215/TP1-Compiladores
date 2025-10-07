@@ -97,25 +97,11 @@ variable = expresion;                 -- Asignar variable
 PRINT expresion;                      -- Mostrar en consola
 ```
 
-
 ### Ejecutar con los siguientes comandos:
-
-Generar parser/lexer con ANTLR para Python y ejecutar los tests (recomendado):
-
-```bash
-java -jar lib/antlr-4.13.2-complete.jar -Dlanguage=Python3 -listener -visitor -o source grammar/biolingo.g4
-
-# Ejecutar tests de ejemplo
+```bioling
+java -jar lib/antlr-4.13.2-complete.jar -Dlanguage=Python3 -listener -visitor -o source biolingo.g4
+```
+### Ejecutar el grammar test:
+```bioling
 python3 test/run_biolingo.py
 ```
-
-Alternativamente, si quieres generar artefactos Java (solo si trabajas con la versión Java del parser):
-
-```bash
-java -jar lib/antlr-4.13.2-complete.jar -o gen grammar/biolingo.g4
-javac -d build -cp .:lib/antlr-4.13.2-complete.jar gen/grammar/*.java
-java -cp build:lib/antlr-4.13.2-complete.jar org.antlr.v4.gui.TestRig biolingo program -tokens input/input.txt
-```
-
-Si en algún momento necesitas generar para C++ u otros lenguajes, ajusta la opción `-Dlanguage=` y el directorio de salida.
-Si en algún momento necesitas generar para C++ u otros lenguajes, ajusta la opción `-Dlanguage=` y el directorio de salida.
