@@ -114,6 +114,11 @@ class biolingoVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by biolingoParser#bio_seq.
+    def visitBio_seq(self, ctx:biolingoParser.Bio_seqContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by biolingoParser#expr_list.
     def visitExpr_list(self, ctx:biolingoParser.Expr_listContext):
         return self.visitChildren(ctx)

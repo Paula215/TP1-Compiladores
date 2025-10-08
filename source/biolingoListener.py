@@ -197,6 +197,15 @@ class biolingoListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by biolingoParser#bio_seq.
+    def enterBio_seq(self, ctx:biolingoParser.Bio_seqContext):
+        pass
+
+    # Exit a parse tree produced by biolingoParser#bio_seq.
+    def exitBio_seq(self, ctx:biolingoParser.Bio_seqContext):
+        pass
+
+
     # Enter a parse tree produced by biolingoParser#expr_list.
     def enterExpr_list(self, ctx:biolingoParser.Expr_listContext):
         pass

@@ -89,8 +89,14 @@ expression: expression ('*' | '/' | '%') expression    // Multiplicación, divis
           | '(' expression ')'                         // Agrupación
           | function_call                              // Llamada a función
           | literal                                    // Literales
+          | bio_seq                                    // Secuencias biológicas
           | ID                                         // Identificadores
           ;
+          
+bio_seq
+    : ('DNA' | 'RNA' | 'PROTEIN') STRING
+    ;
+
 
 expr_list: expression (',' expression)*;
 
