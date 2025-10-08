@@ -1,23 +1,28 @@
 import sys, os
-sys.path.append(os.path.dirname(__file__) + "/..")
 
+# Obtener la ruta absoluta del proyecto (carpeta raíz tp1)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
 from antlr4 import *
 from source.biolingoLexer import biolingoLexer
 from source.biolingoParser import biolingoParser
+from source.executor import BiolingoExecutor
 
-# Leer el archivo de entrada
-input_stream = FileStream("test/grammar_test/test1.txt")
+def main():
+    input_stream = FileStream(os.path.join(BASE_DIR, "test", "grammar_test", "test1.txt"))
+    lexer = biolingoLexer(input_stream)
+    stream = CommonTokenStream(lexer)
+    parser = biolingoParser(stream)
+    tree = parser.program()
 
-# Crear el lexer y parser
-lexer = biolingoLexer(input_stream)
-stream = CommonTokenStream(lexer)
-parser = biolingoParser(stream)
+    print("=== TOKENS ===")
+    stream.fill()
+    for token in stream.tokens:
+        print(token)
 
-# Iniciar el análisis con la regla principal (por ejemplo 'program')
-tree = parser.program()
+    print("\n=== EJECUCIÓN ===")
+    executor = BiolingoExecutor()
+    executor.visit(tree)
 
-# Imprimir los tokens
-print("=== TOKENS ===")
-lexer = biolingoLexer(FileStream("test/grammar_test/test1.txt"))
-for token in lexer.getAllTokens():
-    print(token)
+if __name__ == '__main__':
+    main()
