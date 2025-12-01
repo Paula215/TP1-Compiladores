@@ -265,6 +265,7 @@ class BiolingoExecutor(biolingoVisitor):
             return ""
 
         s = str(v).strip()
+        print(f"[DEBUG] Extrayendo secuencia cruda 0: {s}")
 
         # Si es el nombre de una variable, resolver su valor real recursivamente
         if s in self.variables:
@@ -285,6 +286,8 @@ class BiolingoExecutor(biolingoVisitor):
             return s[1:-1]
 
         # Caso base: ya es una cadena "cruda"
+
+        print(f"[DEBUG] Extrayendo secuencia cruda 1: {s}")
         return s
 
     def _infer_kind(self, v, default_kind="DNA"):
@@ -315,6 +318,8 @@ class BiolingoExecutor(biolingoVisitor):
         s = seq or ""
         py_len = len(s)
 
+        print("Test", py_len)
+        
         try:
             llvm_len = compute_length_llvm(s)
             print(f"[LLVM] length({py_len} bp) = {llvm_len} (Python={py_len})")

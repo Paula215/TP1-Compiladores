@@ -15,6 +15,7 @@ import shutil
 import subprocess
 import tempfile
 import uuid
+import os
 
 # Inicialización del target (no llamar a llvm.initialize() — está deprecado)
 llvm.initialize_native_target()
@@ -168,6 +169,9 @@ def compute_gc_content_llvm(seq: str) -> float:
     i32 = ir.IntType(32)
     f64 = ir.DoubleType()
 
+    printf_ty = ir.FunctionType(ir.IntType(32), [ir.PointerType(i8)], var_arg=True)
+    printf = ir.Function(module, printf_ty, name="printf")
+
     # Global con la secuencia como arreglo de bytes
     arr_type = ir.ArrayType(i8, n)
     gv = ir.GlobalVariable(module, arr_type, name="seq")
@@ -213,7 +217,7 @@ def compute_gc_content_llvm(seq: str) -> float:
     seq_ptr = builder.gep(gv, [ir.Constant(i32, 0), idx_for_gep], name="seq_ptr")
     ch = builder.load(seq_ptr, name="ch")
 
-    isG = builder.icmp_signed("==", ch, ir.Constant(i8, ord("G")), name="isG")
+    isG = builder.icmp_unsigned("==", ch, ir.Constant(i8, ord("G")), name="isG")
     isC = builder.icmp_signed("==", ch, ir.Constant(i8, ord("C")), name="isC")
     isGC = builder.or_(isG, isC, name="isGC")
 
@@ -248,12 +252,12 @@ def compute_gc_content_llvm(seq: str) -> float:
     # JIT: crear engine por módulo, ejecutar y remover módulo
     engine = _create_execution_engine_for_module(llvm_mod)
     try:
-        func_ptr = engine.get_function_address("gc_content")  # o seq_length
+        func_ptr = engine.get_function_address("seq_length")  # o seq_length
         if func_ptr == 0:
             raise RuntimeError("No se obtuvo la dirección de la función.")
-        cfunc = ctypes.CFUNCTYPE(ctypes.c_double)(func_ptr)  # ajustar tipo
+        cfunc = ctypes.CFUNCTYPE(ctypes.c_int32)(func_ptr)  # ajustar tipo
         result = cfunc()
-        return float(result)
+        return int(result)
     finally:
         # remover módulo (seguro aún si engine fue creado con el módulo)
         try:
