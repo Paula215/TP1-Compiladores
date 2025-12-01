@@ -1,4 +1,4 @@
-// Generated from /home/pauz/Documents/Compi/tp1/biolingo.g4 by ANTLR 4.13.1
+// Generated from c:/Users/pjman/OneDrive/Documentos/GitHub/TP1-Compiladores/biolingo.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;

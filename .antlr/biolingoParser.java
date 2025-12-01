@@ -1,4 +1,4 @@
-// Generated from /home/pauz/Documents/Compi/tp1/biolingo.g4 by ANTLR 4.13.1
+// Generated from c:/Users/pjman/OneDrive/Documentos/GitHub/TP1-Compiladores/biolingo.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -136,6 +136,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_program; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterProgram(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitProgram(this);
+		}
 	}
 
 	public final ProgramContext program() throws RecognitionException {
@@ -198,6 +206,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_stmt; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterStmt(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitStmt(this);
+		}
 	}
 
 	public final StmtContext stmt() throws RecognitionException {
@@ -279,6 +295,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_import_stmt; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterImport_stmt(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitImport_stmt(this);
+		}
 	}
 
 	public final Import_stmtContext import_stmt() throws RecognitionException {
@@ -329,6 +353,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_assignment_stmt; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterAssignment_stmt(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitAssignment_stmt(this);
+		}
 	}
 
 	public final Assignment_stmtContext assignment_stmt() throws RecognitionException {
@@ -367,6 +399,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_print_stmt; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterPrint_stmt(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitPrint_stmt(this);
+		}
 	}
 
 	public final Print_stmtContext print_stmt() throws RecognitionException {
@@ -406,6 +446,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_train_markov_stmt; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterTrain_markov_stmt(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitTrain_markov_stmt(this);
+		}
 	}
 
 	public final Train_markov_stmtContext train_markov_stmt() throws RecognitionException {
@@ -460,6 +508,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_find_genes_stmt; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterFind_genes_stmt(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitFind_genes_stmt(this);
+		}
 	}
 
 	public final Find_genes_stmtContext find_genes_stmt() throws RecognitionException {
@@ -511,6 +567,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_markov_config; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterMarkov_config(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitMarkov_config(this);
+		}
 	}
 
 	public final Markov_configContext markov_config() throws RecognitionException {
@@ -561,6 +625,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_markov_params; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterMarkov_params(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitMarkov_params(this);
+		}
 	}
 
 	public final Markov_paramsContext markov_params() throws RecognitionException {
@@ -609,6 +681,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_markov_param; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterMarkov_param(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitMarkov_param(this);
+		}
 	}
 
 	public final Markov_paramContext markov_param() throws RecognitionException {
@@ -706,6 +786,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_query_stmt; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterQuery_stmt(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitQuery_stmt(this);
+		}
 	}
 
 	public final Query_stmtContext query_stmt() throws RecognitionException {
@@ -776,6 +864,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_source; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterSource(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitSource(this);
+		}
 	}
 
 	public final SourceContext source() throws RecognitionException {
@@ -817,6 +913,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_where_clause; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterWhere_clause(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitWhere_clause(this);
+		}
 	}
 
 	public final Where_clauseContext where_clause() throws RecognitionException {
@@ -851,6 +955,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_select_clause; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterSelect_clause(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitSelect_clause(this);
+		}
 	}
 
 	public final Select_clauseContext select_clause() throws RecognitionException {
@@ -888,6 +1000,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_select_list; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterSelect_list(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitSelect_list(this);
+		}
 	}
 
 	public final Select_listContext select_list() throws RecognitionException {
@@ -938,6 +1058,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_select_item; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterSelect_item(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitSelect_item(this);
+		}
 	}
 
 	public final Select_itemContext select_item() throws RecognitionException {
@@ -981,6 +1109,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_limit_clause; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterLimit_clause(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitLimit_clause(this);
+		}
 	}
 
 	public final Limit_clauseContext limit_clause() throws RecognitionException {
@@ -1021,6 +1157,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_condition; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterCondition(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitCondition(this);
+		}
 	}
 
 	public final ConditionContext condition() throws RecognitionException {
@@ -1140,6 +1284,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_comparison; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterComparison(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitComparison(this);
+		}
 	}
 
 	public final ComparisonContext comparison() throws RecognitionException {
@@ -1220,6 +1372,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_comp_op; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterComp_op(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitComp_op(this);
+		}
 	}
 
 	public final Comp_opContext comp_op() throws RecognitionException {
@@ -1274,6 +1434,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expression; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitExpression(this);
+		}
 	}
 
 	public final ExpressionContext expression() throws RecognitionException {
@@ -1453,6 +1621,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_bio_seq; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterBio_seq(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitBio_seq(this);
+		}
 	}
 
 	public final Bio_seqContext bio_seq() throws RecognitionException {
@@ -1499,6 +1675,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expr_list; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterExpr_list(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitExpr_list(this);
+		}
 	}
 
 	public final Expr_listContext expr_list() throws RecognitionException {
@@ -1551,6 +1735,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_function_call; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterFunction_call(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitFunction_call(this);
+		}
 	}
 
 	public final Function_callContext function_call() throws RecognitionException {
@@ -1601,6 +1793,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_arg_list; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterArg_list(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitArg_list(this);
+		}
 	}
 
 	public final Arg_listContext arg_list() throws RecognitionException {
@@ -1654,6 +1854,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_func_name; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterFunc_name(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitFunc_name(this);
+		}
 	}
 
 	public final Func_nameContext func_name() throws RecognitionException {
@@ -1713,6 +1921,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_basic_func; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterBasic_func(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitBasic_func(this);
+		}
 	}
 
 	public final Basic_funcContext basic_func() throws RecognitionException {
@@ -1751,6 +1967,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_agg_func; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterAgg_func(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitAgg_func(this);
+		}
 	}
 
 	public final Agg_funcContext agg_func() throws RecognitionException {
@@ -1798,6 +2022,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_literal; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterLiteral(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitLiteral(this);
+		}
 	}
 
 	public final LiteralContext literal() throws RecognitionException {
@@ -1862,6 +2094,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_percentage; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterPercentage(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitPercentage(this);
+		}
 	}
 
 	public final PercentageContext percentage() throws RecognitionException {
@@ -1896,6 +2136,14 @@ public class biolingoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_sequence_literal; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).enterSequence_literal(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof biolingoListener ) ((biolingoListener)listener).exitSequence_literal(this);
+		}
 	}
 
 	public final Sequence_literalContext sequence_literal() throws RecognitionException {
