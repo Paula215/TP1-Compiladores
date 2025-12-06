@@ -5,9 +5,9 @@ Identifica problemas en el parsing y ejecución.
 """
 
 from antlr4 import *
-from source.biolingoLexer import biolingoLexer
-from source.biolingoParser import biolingoParser
-from source.biolingoVisitor import biolingoVisitor
+from .source.biolingoLexer import biolingoLexer
+from .source.biolingoParser import biolingoParser
+from .source.biolingoVisitor import biolingoVisitor
 
 class DebugVisitor(biolingoVisitor):
     """Visitor que imprime el árbol AST"""
