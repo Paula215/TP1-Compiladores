@@ -1,4 +1,4 @@
-// Generated from /home/pauz/Documents/Compi/tp1/biolingo.g4 by ANTLR 4.13.1
+// Generated from c:/Users/pjman/OneDrive/Documentos/GitHub/TP1-Compiladores/biolingo.g4 by ANTLR 4.13.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -263,6 +263,18 @@ public class biolingoBaseListener implements biolingoListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExpression(biolingoParser.ExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBio_seq(biolingoParser.Bio_seqContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBio_seq(biolingoParser.Bio_seqContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -1,4 +1,4 @@
-// Generated from /home/pauz/Documents/Compi/tp1/biolingo.g4 by ANTLR 4.13.1
+// Generated from c:/Users/pjman/OneDrive/Documentos/GitHub/TP1-Compiladores/biolingo.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -216,6 +216,16 @@ public interface biolingoListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExpression(biolingoParser.ExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link biolingoParser#bio_seq}.
+	 * @param ctx the parse tree
+	 */
+	void enterBio_seq(biolingoParser.Bio_seqContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link biolingoParser#bio_seq}.
+	 * @param ctx the parse tree
+	 */
+	void exitBio_seq(biolingoParser.Bio_seqContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link biolingoParser#expr_list}.
 	 * @param ctx the parse tree
