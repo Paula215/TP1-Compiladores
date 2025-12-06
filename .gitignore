@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+*.interp
+*.tokens
+*.pyc
+
+*~
+*.swp
+.DS_Store
+
+build/
