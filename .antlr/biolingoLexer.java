@@ -1,4 +1,4 @@
-// Generated from /home/pauz/Documents/Compi/tp1/biolingo.g4 by ANTLR 4.13.1
+// Generated from //wsl.localhost/archlinux/home/compi/TP1-Compiladores/biolingo.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -23,9 +23,9 @@ public class biolingoLexer extends Lexer {
 		T__31=32, T__32=33, T__33=34, T__34=35, T__35=36, T__36=37, T__37=38, 
 		T__38=39, T__39=40, T__40=41, T__41=42, T__42=43, T__43=44, T__44=45, 
 		T__45=46, T__46=47, T__47=48, T__48=49, T__49=50, T__50=51, T__51=52, 
-		T__52=53, T__53=54, T__54=55, T__55=56, T__56=57, T__57=58, DNA_SEQ=59, 
-		RNA_SEQ=60, PROTEIN_SEQ=61, BOOLEAN=62, NUMBER=63, STRING=64, ID=65, LINE_COMMENT=66, 
-		BLOCK_COMMENT=67, WS=68;
+		T__52=53, T__53=54, T__54=55, T__55=56, T__56=57, T__57=58, DNA_LITERAL=59, 
+		RNA_LITERAL=60, PROTEIN_LITERAL=61, BOOLEAN=62, NUMBER=63, STRING=64, 
+		ID=65, LINE_COMMENT=66, BLOCK_COMMENT=67, WS=68;
 	public static String[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
 	};
@@ -43,8 +43,8 @@ public class biolingoLexer extends Lexer {
 			"T__33", "T__34", "T__35", "T__36", "T__37", "T__38", "T__39", "T__40", 
 			"T__41", "T__42", "T__43", "T__44", "T__45", "T__46", "T__47", "T__48", 
 			"T__49", "T__50", "T__51", "T__52", "T__53", "T__54", "T__55", "T__56", 
-			"T__57", "DNA_SEQ", "RNA_SEQ", "PROTEIN_SEQ", "BOOLEAN", "NUMBER", "STRING", 
-			"ID", "LINE_COMMENT", "BLOCK_COMMENT", "WS"
+			"T__57", "DNA_LITERAL", "RNA_LITERAL", "PROTEIN_LITERAL", "BOOLEAN", 
+			"NUMBER", "STRING", "ID", "LINE_COMMENT", "BLOCK_COMMENT", "WS"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -56,7 +56,7 @@ public class biolingoLexer extends Lexer {
 			"')'", "','", "'order'", "'threshold'", "'min_length'", "'model'", "'window'", 
 			"'FIND'", "'sequences'", "'FROM'", "'WHERE'", "'SELECT'", "'LIMIT'", 
 			"'AND'", "'OR'", "'NOT'", "'CONTAINS'", "'BETWEEN'", "'!='", "'<'", "'<='", 
-			"'>'", "'>='", "'*'", "'/'", "'%'", "'+'", "'-'", "'.'", "'~'", "'<-'", 
+			"'>'", "'>='", "'.'", "'*'", "'/'", "'%'", "'+'", "'-'", "'~'", "'<-'", 
 			"'~<-'", "'DNA'", "'RNA'", "'PROTEIN'", "'length'", "'gc_content'", "'complement'", 
 			"'reverse'", "'translate'", "'COUNT'", "'AVG'", "'MIN'", "'MAX'", "'SUM'"
 		};
@@ -68,9 +68,9 @@ public class biolingoLexer extends Lexer {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
 			null, null, null, null, null, null, null, null, null, null, null, null, 
 			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, null, null, null, null, null, "DNA_SEQ", 
-			"RNA_SEQ", "PROTEIN_SEQ", "BOOLEAN", "NUMBER", "STRING", "ID", "LINE_COMMENT", 
-			"BLOCK_COMMENT", "WS"
+			null, null, null, null, null, null, null, null, null, null, null, "DNA_LITERAL", 
+			"RNA_LITERAL", "PROTEIN_LITERAL", "BOOLEAN", "NUMBER", "STRING", "ID", 
+			"LINE_COMMENT", "BLOCK_COMMENT", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -356,12 +356,12 @@ public class biolingoLexer extends Lexer {
 		"\u0000\u0000\u0000\u0143\u0144\u0005<\u0000\u0000\u0144\u0145\u0005=\u0000"+
 		"\u0000\u0145D\u0001\u0000\u0000\u0000\u0146\u0147\u0005>\u0000\u0000\u0147"+
 		"F\u0001\u0000\u0000\u0000\u0148\u0149\u0005>\u0000\u0000\u0149\u014a\u0005"+
-		"=\u0000\u0000\u014aH\u0001\u0000\u0000\u0000\u014b\u014c\u0005*\u0000"+
-		"\u0000\u014cJ\u0001\u0000\u0000\u0000\u014d\u014e\u0005/\u0000\u0000\u014e"+
-		"L\u0001\u0000\u0000\u0000\u014f\u0150\u0005%\u0000\u0000\u0150N\u0001"+
-		"\u0000\u0000\u0000\u0151\u0152\u0005+\u0000\u0000\u0152P\u0001\u0000\u0000"+
-		"\u0000\u0153\u0154\u0005-\u0000\u0000\u0154R\u0001\u0000\u0000\u0000\u0155"+
-		"\u0156\u0005.\u0000\u0000\u0156T\u0001\u0000\u0000\u0000\u0157\u0158\u0005"+
+		"=\u0000\u0000\u014aH\u0001\u0000\u0000\u0000\u014b\u014c\u0005.\u0000"+
+		"\u0000\u014cJ\u0001\u0000\u0000\u0000\u014d\u014e\u0005*\u0000\u0000\u014e"+
+		"L\u0001\u0000\u0000\u0000\u014f\u0150\u0005/\u0000\u0000\u0150N\u0001"+
+		"\u0000\u0000\u0000\u0151\u0152\u0005%\u0000\u0000\u0152P\u0001\u0000\u0000"+
+		"\u0000\u0153\u0154\u0005+\u0000\u0000\u0154R\u0001\u0000\u0000\u0000\u0155"+
+		"\u0156\u0005-\u0000\u0000\u0156T\u0001\u0000\u0000\u0000\u0157\u0158\u0005"+
 		"~\u0000\u0000\u0158V\u0001\u0000\u0000\u0000\u0159\u015a\u0005<\u0000"+
 		"\u0000\u015a\u015b\u0005-\u0000\u0000\u015bX\u0001\u0000\u0000\u0000\u015c"+
 		"\u015d\u0005~\u0000\u0000\u015d\u015e\u0005<\u0000\u0000\u015e\u015f\u0005"+
@@ -402,22 +402,22 @@ public class biolingoLexer extends Lexer {
 		"M\u0000\u0000\u01ae\u01af\u0005A\u0000\u0000\u01af\u01b0\u0005X\u0000"+
 		"\u0000\u01b0r\u0001\u0000\u0000\u0000\u01b1\u01b2\u0005S\u0000\u0000\u01b2"+
 		"\u01b3\u0005U\u0000\u0000\u01b3\u01b4\u0005M\u0000\u0000\u01b4t\u0001"+
-		"\u0000\u0000\u0000\u01b5\u01b6\u0005D\u0000\u0000\u01b6\u01b7\u0005N\u0000"+
-		"\u0000\u01b7\u01b8\u0005A\u0000\u0000\u01b8\u01b9\u0001\u0000\u0000\u0000"+
+		"\u0000\u0000\u0000\u01b5\u01b6\u0005d\u0000\u0000\u01b6\u01b7\u0005n\u0000"+
+		"\u0000\u01b7\u01b8\u0005a\u0000\u0000\u01b8\u01b9\u0001\u0000\u0000\u0000"+
 		"\u01b9\u01bb\u0005\"\u0000\u0000\u01ba\u01bc\u0007\u0000\u0000\u0000\u01bb"+
 		"\u01ba\u0001\u0000\u0000\u0000\u01bc\u01bd\u0001\u0000\u0000\u0000\u01bd"+
 		"\u01bb\u0001\u0000\u0000\u0000\u01bd\u01be\u0001\u0000\u0000\u0000\u01be"+
 		"\u01bf\u0001\u0000\u0000\u0000\u01bf\u01c0\u0005\"\u0000\u0000\u01c0v"+
-		"\u0001\u0000\u0000\u0000\u01c1\u01c2\u0005R\u0000\u0000\u01c2\u01c3\u0005"+
-		"N\u0000\u0000\u01c3\u01c4\u0005A\u0000\u0000\u01c4\u01c5\u0001\u0000\u0000"+
+		"\u0001\u0000\u0000\u0000\u01c1\u01c2\u0005r\u0000\u0000\u01c2\u01c3\u0005"+
+		"n\u0000\u0000\u01c3\u01c4\u0005a\u0000\u0000\u01c4\u01c5\u0001\u0000\u0000"+
 		"\u0000\u01c5\u01c7\u0005\"\u0000\u0000\u01c6\u01c8\u0007\u0001\u0000\u0000"+
 		"\u01c7\u01c6\u0001\u0000\u0000\u0000\u01c8\u01c9\u0001\u0000\u0000\u0000"+
 		"\u01c9\u01c7\u0001\u0000\u0000\u0000\u01c9\u01ca\u0001\u0000\u0000\u0000"+
 		"\u01ca\u01cb\u0001\u0000\u0000\u0000\u01cb\u01cc\u0005\"\u0000\u0000\u01cc"+
-		"x\u0001\u0000\u0000\u0000\u01cd\u01ce\u0005P\u0000\u0000\u01ce\u01cf\u0005"+
-		"R\u0000\u0000\u01cf\u01d0\u0005O\u0000\u0000\u01d0\u01d1\u0005T\u0000"+
-		"\u0000\u01d1\u01d2\u0005E\u0000\u0000\u01d2\u01d3\u0005I\u0000\u0000\u01d3"+
-		"\u01d4\u0005N\u0000\u0000\u01d4\u01d5\u0001\u0000\u0000\u0000\u01d5\u01d7"+
+		"x\u0001\u0000\u0000\u0000\u01cd\u01ce\u0005p\u0000\u0000\u01ce\u01cf\u0005"+
+		"r\u0000\u0000\u01cf\u01d0\u0005o\u0000\u0000\u01d0\u01d1\u0005t\u0000"+
+		"\u0000\u01d1\u01d2\u0005e\u0000\u0000\u01d2\u01d3\u0005i\u0000\u0000\u01d3"+
+		"\u01d4\u0005n\u0000\u0000\u01d4\u01d5\u0001\u0000\u0000\u0000\u01d5\u01d7"+
 		"\u0005\"\u0000\u0000\u01d6\u01d8\u0007\u0002\u0000\u0000\u01d7\u01d6\u0001"+
 		"\u0000\u0000\u0000\u01d8\u01d9\u0001\u0000\u0000\u0000\u01d9\u01d7\u0001"+
 		"\u0000\u0000\u0000\u01d9\u01da\u0001\u0000\u0000\u0000\u01da\u01db\u0001"+

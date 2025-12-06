@@ -1,4 +1,4 @@
-// Generated from /home/pauz/Documents/Compi/tp1/biolingo.g4 by ANTLR 4.13.1
+// Generated from //wsl.localhost/archlinux/home/compi/TP1-Compiladores/biolingo.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -23,9 +23,9 @@ public class biolingoParser extends Parser {
 		T__31=32, T__32=33, T__33=34, T__34=35, T__35=36, T__36=37, T__37=38, 
 		T__38=39, T__39=40, T__40=41, T__41=42, T__42=43, T__43=44, T__44=45, 
 		T__45=46, T__46=47, T__47=48, T__48=49, T__49=50, T__50=51, T__51=52, 
-		T__52=53, T__53=54, T__54=55, T__55=56, T__56=57, T__57=58, DNA_SEQ=59, 
-		RNA_SEQ=60, PROTEIN_SEQ=61, BOOLEAN=62, NUMBER=63, STRING=64, ID=65, LINE_COMMENT=66, 
-		BLOCK_COMMENT=67, WS=68;
+		T__52=53, T__53=54, T__54=55, T__55=56, T__56=57, T__57=58, DNA_LITERAL=59, 
+		RNA_LITERAL=60, PROTEIN_LITERAL=61, BOOLEAN=62, NUMBER=63, STRING=64, 
+		ID=65, LINE_COMMENT=66, BLOCK_COMMENT=67, WS=68;
 	public static final int
 		RULE_program = 0, RULE_stmt = 1, RULE_import_stmt = 2, RULE_assignment_stmt = 3, 
 		RULE_print_stmt = 4, RULE_train_markov_stmt = 5, RULE_find_genes_stmt = 6, 
@@ -55,7 +55,7 @@ public class biolingoParser extends Parser {
 			"')'", "','", "'order'", "'threshold'", "'min_length'", "'model'", "'window'", 
 			"'FIND'", "'sequences'", "'FROM'", "'WHERE'", "'SELECT'", "'LIMIT'", 
 			"'AND'", "'OR'", "'NOT'", "'CONTAINS'", "'BETWEEN'", "'!='", "'<'", "'<='", 
-			"'>'", "'>='", "'*'", "'/'", "'%'", "'+'", "'-'", "'.'", "'~'", "'<-'", 
+			"'>'", "'>='", "'.'", "'*'", "'/'", "'%'", "'+'", "'-'", "'~'", "'<-'", 
 			"'~<-'", "'DNA'", "'RNA'", "'PROTEIN'", "'length'", "'gc_content'", "'complement'", 
 			"'reverse'", "'translate'", "'COUNT'", "'AVG'", "'MIN'", "'MAX'", "'SUM'"
 		};
@@ -67,9 +67,9 @@ public class biolingoParser extends Parser {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
 			null, null, null, null, null, null, null, null, null, null, null, null, 
 			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, null, null, null, null, null, "DNA_SEQ", 
-			"RNA_SEQ", "PROTEIN_SEQ", "BOOLEAN", "NUMBER", "STRING", "ID", "LINE_COMMENT", 
-			"BLOCK_COMMENT", "WS"
+			null, null, null, null, null, null, null, null, null, null, null, "DNA_LITERAL", 
+			"RNA_LITERAL", "PROTEIN_LITERAL", "BOOLEAN", "NUMBER", "STRING", "ID", 
+			"LINE_COMMENT", "BLOCK_COMMENT", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -1322,7 +1322,7 @@ public class biolingoParser extends Parser {
 			case 4:
 				{
 				setState(236);
-				match(T__40);
+				match(T__41);
 				setState(237);
 				expression(6);
 				}
@@ -1379,10 +1379,10 @@ public class biolingoParser extends Parser {
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(248);
-						if (!(precpred(_ctx, 12))) throw new FailedPredicateException(this, "precpred(_ctx, 12)");
+						if (!(precpred(_ctx, 11))) throw new FailedPredicateException(this, "precpred(_ctx, 11)");
 						setState(249);
 						_la = _input.LA(1);
-						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 962072674304L) != 0)) ) {
+						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 1924145348608L) != 0)) ) {
 						_errHandler.recoverInline(this);
 						}
 						else {
@@ -1391,7 +1391,7 @@ public class biolingoParser extends Parser {
 							consume();
 						}
 						setState(250);
-						expression(13);
+						expression(12);
 						}
 						break;
 					case 2:
@@ -1399,10 +1399,10 @@ public class biolingoParser extends Parser {
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(251);
-						if (!(precpred(_ctx, 11))) throw new FailedPredicateException(this, "precpred(_ctx, 11)");
+						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
 						setState(252);
 						_la = _input.LA(1);
-						if ( !(_la==T__39 || _la==T__40) ) {
+						if ( !(_la==T__40 || _la==T__41) ) {
 						_errHandler.recoverInline(this);
 						}
 						else {
@@ -1411,7 +1411,7 @@ public class biolingoParser extends Parser {
 							consume();
 						}
 						setState(253);
-						expression(12);
+						expression(11);
 						}
 						break;
 					case 3:
@@ -1419,9 +1419,9 @@ public class biolingoParser extends Parser {
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(254);
-						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
+						if (!(precpred(_ctx, 12))) throw new FailedPredicateException(this, "precpred(_ctx, 12)");
 						setState(255);
-						match(T__41);
+						match(T__36);
 						setState(256);
 						match(ID);
 						}
@@ -1567,7 +1567,7 @@ public class biolingoParser extends Parser {
 			setState(276);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (((((_la - 13)) & ~0x3f) == 0 && ((1L << (_la - 13)) & 9007198449434625L) != 0)) {
+			if (((((_la - 13)) & ~0x3f) == 0 && ((1L << (_la - 13)) & 9007198717870081L) != 0)) {
 				{
 				setState(275);
 				arg_list();
@@ -1873,7 +1873,7 @@ public class biolingoParser extends Parser {
 			setState(304);
 			match(NUMBER);
 			setState(305);
-			match(T__38);
+			match(T__39);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1889,9 +1889,9 @@ public class biolingoParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Sequence_literalContext extends ParserRuleContext {
-		public TerminalNode DNA_SEQ() { return getToken(biolingoParser.DNA_SEQ, 0); }
-		public TerminalNode RNA_SEQ() { return getToken(biolingoParser.RNA_SEQ, 0); }
-		public TerminalNode PROTEIN_SEQ() { return getToken(biolingoParser.PROTEIN_SEQ, 0); }
+		public TerminalNode DNA_LITERAL() { return getToken(biolingoParser.DNA_LITERAL, 0); }
+		public TerminalNode RNA_LITERAL() { return getToken(biolingoParser.RNA_LITERAL, 0); }
+		public TerminalNode PROTEIN_LITERAL() { return getToken(biolingoParser.PROTEIN_LITERAL, 0); }
 		public Sequence_literalContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1949,11 +1949,11 @@ public class biolingoParser extends Parser {
 	private boolean expression_sempred(ExpressionContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 2:
-			return precpred(_ctx, 12);
-		case 3:
 			return precpred(_ctx, 11);
-		case 4:
+		case 3:
 			return precpred(_ctx, 10);
+		case 4:
+			return precpred(_ctx, 12);
 		}
 		return true;
 	}
@@ -2010,7 +2010,7 @@ public class biolingoParser extends Parser {
 		"\u001e\u0001\u001e\u0001\u001e\u0000\u0002\"(\u001f\u0000\u0002\u0004"+
 		"\u0006\b\n\f\u000e\u0010\u0012\u0014\u0016\u0018\u001a\u001c\u001e \""+
 		"$&(*,.02468:<\u0000\b\u0001\u0000@A\u0002\u0000\u0004\u0004 $\u0001\u0000"+
-		"%\'\u0001\u0000()\u0001\u0000.0\u0001\u000015\u0001\u00006:\u0001\u0000"+
+		"&(\u0001\u0000)*\u0001\u0000.0\u0001\u000015\u0001\u00006:\u0001\u0000"+
 		";=\u0146\u0000?\u0001\u0000\u0000\u0000\u0002L\u0001\u0000\u0000\u0000"+
 		"\u0004N\u0001\u0000\u0000\u0000\u0006V\u0001\u0000\u0000\u0000\b[\u0001"+
 		"\u0000\u0000\u0000\n_\u0001\u0000\u0000\u0000\fh\u0001\u0000\u0000\u0000"+
@@ -2111,7 +2111,7 @@ public class biolingoParser extends Parser {
 		"\u0000\u0000\u00e4\'\u0001\u0000\u0000\u0000\u00e5\u00e6\u0006\u0014\uffff"+
 		"\uffff\u0000\u00e6\u00e7\u0005+\u0000\u0000\u00e7\u00f7\u0003(\u0014\t"+
 		"\u00e8\u00e9\u0005,\u0000\u0000\u00e9\u00f7\u0003(\u0014\b\u00ea\u00eb"+
-		"\u0005-\u0000\u0000\u00eb\u00f7\u0003(\u0014\u0007\u00ec\u00ed\u0005)"+
+		"\u0005-\u0000\u0000\u00eb\u00f7\u0003(\u0014\u0007\u00ec\u00ed\u0005*"+
 		"\u0000\u0000\u00ed\u00f7\u0003(\u0014\u0006\u00ee\u00ef\u0005\r\u0000"+
 		"\u0000\u00ef\u00f0\u0003(\u0014\u0000\u00f0\u00f1\u0005\u000e\u0000\u0000"+
 		"\u00f1\u00f7\u0001\u0000\u0000\u0000\u00f2\u00f7\u0003.\u0017\u0000\u00f3"+
@@ -2121,10 +2121,10 @@ public class biolingoParser extends Parser {
 		"\u0000\u0000\u00f6\u00ee\u0001\u0000\u0000\u0000\u00f6\u00f2\u0001\u0000"+
 		"\u0000\u0000\u00f6\u00f3\u0001\u0000\u0000\u0000\u00f6\u00f4\u0001\u0000"+
 		"\u0000\u0000\u00f6\u00f5\u0001\u0000\u0000\u0000\u00f7\u0103\u0001\u0000"+
-		"\u0000\u0000\u00f8\u00f9\n\f\u0000\u0000\u00f9\u00fa\u0007\u0002\u0000"+
-		"\u0000\u00fa\u0102\u0003(\u0014\r\u00fb\u00fc\n\u000b\u0000\u0000\u00fc"+
-		"\u00fd\u0007\u0003\u0000\u0000\u00fd\u0102\u0003(\u0014\f\u00fe\u00ff"+
-		"\n\n\u0000\u0000\u00ff\u0100\u0005*\u0000\u0000\u0100\u0102\u0005A\u0000"+
+		"\u0000\u0000\u00f8\u00f9\n\u000b\u0000\u0000\u00f9\u00fa\u0007\u0002\u0000"+
+		"\u0000\u00fa\u0102\u0003(\u0014\f\u00fb\u00fc\n\n\u0000\u0000\u00fc\u00fd"+
+		"\u0007\u0003\u0000\u0000\u00fd\u0102\u0003(\u0014\u000b\u00fe\u00ff\n"+
+		"\f\u0000\u0000\u00ff\u0100\u0005%\u0000\u0000\u0100\u0102\u0005A\u0000"+
 		"\u0000\u0101\u00f8\u0001\u0000\u0000\u0000\u0101\u00fb\u0001\u0000\u0000"+
 		"\u0000\u0101\u00fe\u0001\u0000\u0000\u0000\u0102\u0105\u0001\u0000\u0000"+
 		"\u0000\u0103\u0101\u0001\u0000\u0000\u0000\u0103\u0104\u0001\u0000\u0000"+
@@ -2153,10 +2153,10 @@ public class biolingoParser extends Parser {
 		"\u0000\u0000\u012e\u012a\u0001\u0000\u0000\u0000\u012e\u012b\u0001\u0000"+
 		"\u0000\u0000\u012e\u012c\u0001\u0000\u0000\u0000\u012e\u012d\u0001\u0000"+
 		"\u0000\u0000\u012f9\u0001\u0000\u0000\u0000\u0130\u0131\u0005?\u0000\u0000"+
-		"\u0131\u0132\u0005\'\u0000\u0000\u0132;\u0001\u0000\u0000\u0000\u0133"+
-		"\u0134\u0007\u0007\u0000\u0000\u0134=\u0001\u0000\u0000\u0000\u0019AL"+
-		"Rdmv}\u008f\u0096\u0099\u009c\u00ad\u00b3\u00c0\u00c8\u00ca\u00e1\u00f6"+
-		"\u0101\u0103\u010e\u0114\u011d\u0123\u012e";
+		"\u0131\u0132\u0005(\u0000\u0000\u0132;\u0001\u0000\u0000\u0000\u0133\u0134"+
+		"\u0007\u0007\u0000\u0000\u0134=\u0001\u0000\u0000\u0000\u0019ALRdmv}\u008f"+
+		"\u0096\u0099\u009c\u00ad\u00b3\u00c0\u00c8\u00ca\u00e1\u00f6\u0101\u0103"+
+		"\u010e\u0114\u011d\u0123\u012e";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
