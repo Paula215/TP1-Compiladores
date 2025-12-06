@@ -188,12 +188,111 @@ class biolingoListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by biolingoParser#expression.
-    def enterExpression(self, ctx:biolingoParser.ExpressionContext):
+    # Enter a parse tree produced by biolingoParser#UnaryReverse.
+    def enterUnaryReverse(self, ctx:biolingoParser.UnaryReverseContext):
         pass
 
-    # Exit a parse tree produced by biolingoParser#expression.
-    def exitExpression(self, ctx:biolingoParser.ExpressionContext):
+    # Exit a parse tree produced by biolingoParser#UnaryReverse.
+    def exitUnaryReverse(self, ctx:biolingoParser.UnaryReverseContext):
+        pass
+
+
+    # Enter a parse tree produced by biolingoParser#Group.
+    def enterGroup(self, ctx:biolingoParser.GroupContext):
+        pass
+
+    # Exit a parse tree produced by biolingoParser#Group.
+    def exitGroup(self, ctx:biolingoParser.GroupContext):
+        pass
+
+
+    # Enter a parse tree produced by biolingoParser#FuncCall.
+    def enterFuncCall(self, ctx:biolingoParser.FuncCallContext):
+        pass
+
+    # Exit a parse tree produced by biolingoParser#FuncCall.
+    def exitFuncCall(self, ctx:biolingoParser.FuncCallContext):
+        pass
+
+
+    # Enter a parse tree produced by biolingoParser#MulDivMod.
+    def enterMulDivMod(self, ctx:biolingoParser.MulDivModContext):
+        pass
+
+    # Exit a parse tree produced by biolingoParser#MulDivMod.
+    def exitMulDivMod(self, ctx:biolingoParser.MulDivModContext):
+        pass
+
+
+    # Enter a parse tree produced by biolingoParser#IdExpr.
+    def enterIdExpr(self, ctx:biolingoParser.IdExprContext):
+        pass
+
+    # Exit a parse tree produced by biolingoParser#IdExpr.
+    def exitIdExpr(self, ctx:biolingoParser.IdExprContext):
+        pass
+
+
+    # Enter a parse tree produced by biolingoParser#AddSub.
+    def enterAddSub(self, ctx:biolingoParser.AddSubContext):
+        pass
+
+    # Exit a parse tree produced by biolingoParser#AddSub.
+    def exitAddSub(self, ctx:biolingoParser.AddSubContext):
+        pass
+
+
+    # Enter a parse tree produced by biolingoParser#BioSeqExpr.
+    def enterBioSeqExpr(self, ctx:biolingoParser.BioSeqExprContext):
+        pass
+
+    # Exit a parse tree produced by biolingoParser#BioSeqExpr.
+    def exitBioSeqExpr(self, ctx:biolingoParser.BioSeqExprContext):
+        pass
+
+
+    # Enter a parse tree produced by biolingoParser#UnaryComplement.
+    def enterUnaryComplement(self, ctx:biolingoParser.UnaryComplementContext):
+        pass
+
+    # Exit a parse tree produced by biolingoParser#UnaryComplement.
+    def exitUnaryComplement(self, ctx:biolingoParser.UnaryComplementContext):
+        pass
+
+
+    # Enter a parse tree produced by biolingoParser#LiteralExpr.
+    def enterLiteralExpr(self, ctx:biolingoParser.LiteralExprContext):
+        pass
+
+    # Exit a parse tree produced by biolingoParser#LiteralExpr.
+    def exitLiteralExpr(self, ctx:biolingoParser.LiteralExprContext):
+        pass
+
+
+    # Enter a parse tree produced by biolingoParser#UnaryMinus.
+    def enterUnaryMinus(self, ctx:biolingoParser.UnaryMinusContext):
+        pass
+
+    # Exit a parse tree produced by biolingoParser#UnaryMinus.
+    def exitUnaryMinus(self, ctx:biolingoParser.UnaryMinusContext):
+        pass
+
+
+    # Enter a parse tree produced by biolingoParser#UnaryRevComplement.
+    def enterUnaryRevComplement(self, ctx:biolingoParser.UnaryRevComplementContext):
+        pass
+
+    # Exit a parse tree produced by biolingoParser#UnaryRevComplement.
+    def exitUnaryRevComplement(self, ctx:biolingoParser.UnaryRevComplementContext):
+        pass
+
+
+    # Enter a parse tree produced by biolingoParser#FieldAccess.
+    def enterFieldAccess(self, ctx:biolingoParser.FieldAccessContext):
+        pass
+
+    # Exit a parse tree produced by biolingoParser#FieldAccess.
+    def exitFieldAccess(self, ctx:biolingoParser.FieldAccessContext):
         pass
 
 

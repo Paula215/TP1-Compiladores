@@ -1,155 +1,198 @@
 grammar biolingo;
 
-// PROGRAMA PRINCIPAL
-program: stmt+ EOF;
+// ===== PROGRAMA =====
+program: stmt+ EOF ;
 
-stmt: import_stmt
-     | assignment_stmt
-     | query_stmt
-     | find_genes_stmt
-     | train_markov_stmt
-     | print_stmt
-     | ';'
-     ;
-
-// IMPORTS
-import_stmt: 'IMPORT' STRING ('AS' ID)? ';';
-
-// ASIGNACIONES
-assignment_stmt: ID '=' expression ';';
-
-// PRINT
-print_stmt: 'PRINT' expression ';';
-
-// CADENAS DE MARKOV - COMANDOS PRINCIPALES
-train_markov_stmt: 'TRAIN_MARKOV' 'ON' source 
-                   ('WITH' markov_params)?
-                   ';';
-
-find_genes_stmt: 'FIND_GENES' 'IN' expression 
-                 ('USING' markov_config)?
-                 ';';
-
-markov_config: 'markov' ('(' markov_params ')')?;
-
-markov_params: markov_param (',' markov_param)*;
-
-markov_param: 'order' '=' NUMBER
-            | 'threshold' '=' NUMBER
-            | 'min_length' '=' NUMBER
-            | 'model' '=' STRING
-            | 'window' '=' NUMBER
-            ;
-
-// CONSULTAS BÁSICAS (FIND)
-query_stmt: 'FIND' 'sequences' 
-            'FROM' source 
-            where_clause? 
-            select_clause?
-            limit_clause? 
-            ';';
-
-source: STRING | ID;
-
-where_clause: 'WHERE' condition;
-
-select_clause: 'SELECT' select_list;
-
-select_list: select_item (',' select_item)*;
-
-select_item: expression ('AS' ID)?;
-
-limit_clause: 'LIMIT' NUMBER;
-
-// CONDICIONES (WHERE)
-condition: condition 'AND' condition
-         | condition 'OR' condition
-         | 'NOT' condition
-         | '(' condition ')'
-         | comparison
-         ;
-
-comparison: expression comp_op expression
-          | expression 'CONTAINS' expression
-          | expression 'BETWEEN' expression 'AND' expression
-          | expression 'IN' '(' expr_list ')'
-          ;
-
-comp_op: '=' | '!=' | '<' | '<=' | '>' | '>=';
-
-// EXPRESIONES (CORREGIDA - sin ambigüedades)
-expression: 
-      expression '.' ID                          // Acceso a campo PRIMERO (más alta precedencia)
-    | expression ('*' | '/' | '%') expression    // Multiplicación
-    | expression ('+' | '-') expression          // Suma/Resta  
-    | '~' expression                             // Complemento
-    | '<-' expression                            // Reversa
-    | '~<-' expression                           // Complemento reverso
-    | '-' expression                             // Negación unaria
-    | '(' expression ')'                         // Agrupación
-    | function_call                              // Llamada a función
-    | literal                                    // Literales
-    | bio_seq                                    // Secuencias biológicas
-    | ID                                         // Identificadores
+// ===== STATEMENTS =====
+stmt
+    : import_stmt
+    | assignment_stmt
+    | query_stmt
+    | find_genes_stmt
+    | train_markov_stmt
+    | print_stmt
+    | ';'  // statement vacío
     ;
-          
-bio_seq: ('DNA' | 'RNA' | 'PROTEIN') STRING;
 
-expr_list: expression (',' expression)*;
+import_stmt
+    : 'IMPORT' STRING ('AS' ID)? ';'
+    ;
 
-// FUNCIONES
-function_call: func_name '(' arg_list? ')';
+assignment_stmt
+    : ID '=' expression ';'
+    ;
 
-arg_list: expression (',' expression)*;
+print_stmt
+    : 'PRINT' expression ';'
+    ;
 
-func_name: basic_func 
-         | agg_func 
-         | ID                    
-         ;
+// ===== TRAIN MARKOV =====
+train_markov_stmt
+    : 'TRAIN_MARKOV' 'ON' source ('WITH' markov_params)? ';'
+    ;
 
-// Funciones biológicas básicas
-basic_func: 'length'
-          | 'gc_content'
-          | 'complement' 
-          | 'reverse'
-          | 'translate'
-          ;
+// ===== FIND GENES =====
+find_genes_stmt
+    : 'FIND_GENES' 'IN' expression ('USING' markov_config)? ';'
+    ;
 
-// Funciones de agregación
-agg_func: 'COUNT' 
-        | 'AVG' 
-        | 'MIN' 
-        | 'MAX' 
-        | 'SUM'
-        ;
+markov_config
+    : 'markov' ('(' markov_params ')')?
+    ;
 
-// LITERALES
-literal: NUMBER
-       | STRING
-       | BOOLEAN
-       | percentage
-       | sequence_literal
-       ;
+markov_params
+    : markov_param (',' markov_param)*
+    ;
 
-percentage: NUMBER '%';
+markov_param
+    : 'order' '=' NUMBER
+    | 'threshold' '=' NUMBER
+    | 'min_length' '=' NUMBER
+    | 'model' '=' STRING
+    | 'window' '=' NUMBER
+    ;
 
-// Secuencias tipadas (CORREGIDO - sin conflicto con bio_seq)
-sequence_literal: DNA_LITERAL | RNA_LITERAL | PROTEIN_LITERAL;
+// ===== QUERY STATEMENTS =====
+query_stmt
+    : 'FIND' 'sequences' 'FROM' source where_clause? select_clause? limit_clause? ';'
+    ;
 
-DNA_LITERAL: 'dna' '"' [ATCGN]+ '"';
-RNA_LITERAL: 'rna' '"' [AUCGN]+ '"';
-PROTEIN_LITERAL: 'protein' '"' [ACDEFGHIKLMNPQRSTVWY*]+ '"';
+source
+    : STRING
+    | ID
+    ;
 
-// TOKENS BÁSICOS
-BOOLEAN: 'true' | 'false' | 'TRUE' | 'FALSE';
+where_clause
+    : 'WHERE' condition
+    ;
 
-NUMBER: [0-9]+ ('.' [0-9]+)?;
+select_clause
+    : 'SELECT' select_list
+    ;
 
-STRING: '"' (~["\\\r\n] | '\\' .)* '"';
+select_list
+    : select_item (',' select_item)*
+    ;
 
-ID: [a-zA-Z_][a-zA-Z0-9_]*;
+select_item
+    : expression ('AS' ID)?
+    ;
 
-// COMENTARIOS Y ESPACIOS
-LINE_COMMENT: '--' ~[\r\n]* -> skip;
-BLOCK_COMMENT: '/*' .*? '*/' -> skip;
-WS: [ \t\r\n]+ -> skip;
+limit_clause
+    : 'LIMIT' NUMBER
+    ;
+
+// ===== CONDITIONS =====
+condition
+    : 'NOT' condition
+    | '(' condition ')'
+    | comparison
+    | condition 'AND' condition
+    | condition 'OR' condition
+    ;
+
+comparison
+    : expression comp_op expression
+    | expression 'CONTAINS' expression
+    | expression 'BETWEEN' expression 'AND' expression
+    | expression 'IN' '(' expr_list ')'
+    ;
+
+comp_op
+    : '='
+    | '!='
+    | '<'
+    | '<='
+    | '>'
+    | '>='
+    ;
+
+// ===== EXPRESIONES CON ETIQUETAS =====
+expression
+    : '~' expression                              # UnaryComplement
+    | '<-' expression                             # UnaryReverse
+    | '~<-' expression                            # UnaryRevComplement
+    | '-' expression                              # UnaryMinus
+    | '(' expression ')'                          # Group
+    | function_call                               # FuncCall
+    | literal                                     # LiteralExpr
+    | bio_seq                                     # BioSeqExpr
+    | ID                                          # IdExpr
+    | expression op=('*'|'/'|'%') expression      # MulDivMod
+    | expression op=('+'|'-') expression          # AddSub
+    | expression '.' ID                           # FieldAccess
+    ;
+
+// ===== SECUENCIAS BIOLÓGICAS =====
+bio_seq
+    : ('DNA' | 'RNA' | 'PROTEIN') STRING
+    ;
+
+// ===== LISTAS DE EXPRESIONES =====
+expr_list
+    : expression (',' expression)*
+    ;
+
+// ===== LLAMADAS A FUNCIONES =====
+function_call
+    : func_name '(' arg_list? ')'
+    ;
+
+arg_list
+    : expression (',' expression)*
+    ;
+
+func_name
+    : basic_func
+    | agg_func
+    | ID
+    ;
+
+basic_func
+    : 'length'
+    | 'gc_content'
+    | 'complement'
+    | 'reverse'
+    | 'translate'
+    ;
+
+agg_func
+    : 'COUNT'
+    | 'AVG'
+    | 'MIN'
+    | 'MAX'
+    | 'SUM'
+    ;
+
+// ===== LITERALES =====
+literal
+    : NUMBER
+    | STRING
+    | BOOLEAN
+    | percentage
+    | sequence_literal
+    ;
+
+percentage
+    : NUMBER '%'
+    ;
+
+sequence_literal
+    : DNA_LITERAL
+    | RNA_LITERAL
+    | PROTEIN_LITERAL
+    ;
+
+// ===== TOKENS =====
+DNA_LITERAL: 'DNA' '"' [ATGCatgc]+ '"' ;
+RNA_LITERAL: 'RNA' '"' [AUGCaugc]+ '"' ;
+PROTEIN_LITERAL: 'PROTEIN' '"' [A-Z*]+ '"' ;
+
+BOOLEAN: 'true' | 'false' ;
+NUMBER: [0-9]+ ('.' [0-9]+)? ;
+STRING: '"' (~["\r\n])* '"' ;
+ID: [a-zA-Z_][a-zA-Z0-9_]* ;
+
+LINE_COMMENT: '//' ~[\r\n]* -> skip ;
+BLOCK_COMMENT: '/*' .*? '*/' -> skip ;
+WS: [ \t\r\n]+ -> skip ;

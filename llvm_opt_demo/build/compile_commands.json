@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/compi/TP1-Compiladores/llvm_opt_demo/build",
+  "command": "/usr/sbin/c++   -g -std=gnu++17   -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -o CMakeFiles/BiolingoOptDemo.dir/generate_ir.cpp.o -c /home/compi/TP1-Compiladores/llvm_opt_demo/generate_ir.cpp",
+  "file": "/home/compi/TP1-Compiladores/llvm_opt_demo/generate_ir.cpp",
+  "output": "CMakeFiles/BiolingoOptDemo.dir/generate_ir.cpp.o"
+}
+]

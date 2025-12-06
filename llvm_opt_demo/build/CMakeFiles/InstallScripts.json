@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/compi/TP1-Compiladores/llvm_opt_demo/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

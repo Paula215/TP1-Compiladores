@@ -87,10 +87,14 @@ class BiolingoExecutor(biolingoVisitor):
     # ================================================================
     def visitIdExpr(self, ctx):
         """
-        ID -> devuelve el valor almacenado en variables si existe, si no, el nombre.
+        ID -> devuelve el valor almacenado en variables.
         """
         name = ctx.ID().getText()
-        return self.variables.get(name, name)
+        if name in self.variables:
+            return self.variables[name]
+        else:
+            print(f"[WARN] Variable '{name}' no definida, devolviendo nombre")
+            return name
 
     def visitLiteralExpr(self, ctx):
         """
@@ -165,8 +169,9 @@ class BiolingoExecutor(biolingoVisitor):
         <- expression
         """
         value = self.visit(ctx.expression())
+        kind = self._infer_kind(value, "DNA")
         seq = self._extract_seq(value)
-        return self.fn_reverse(seq)
+        return self.fn_reverse(seq, kind)
 
     def visitUnaryRevComplement(self, ctx):
         """
@@ -175,7 +180,10 @@ class BiolingoExecutor(biolingoVisitor):
         value = self.visit(ctx.expression())
         kind = self._infer_kind(value, "DNA")
         seq = self._extract_seq(value)
-        return self.fn_reverse(self.fn_complement(seq, kind))
+        comp = self.fn_complement(seq, kind)
+        # comp ya tiene formato KIND"SEQ", extraemos de nuevo
+        seq_comp = self._extract_seq(comp)
+        return self.fn_reverse(seq_comp, kind)
 
     # ================================================================
     # Literales y secuencias
@@ -198,7 +206,7 @@ class BiolingoExecutor(biolingoVisitor):
             return ctx.BOOLEAN().getText().lower() == 'true'
 
         if ctx.sequence_literal():
-            # p.ej. 'DNA"ATGCGT"' (token DNA_SEQ) -> se deja textual
+            # p.ej. DNA_LITERAL token -> devolvemos el texto tal cual
             return ctx.sequence_literal().getText()
 
         return None
@@ -222,16 +230,15 @@ class BiolingoExecutor(biolingoVisitor):
         func_name = ctx.func_name().getText()
         # recolecta argumentos evaluados
         args = []
-        if hasattr(ctx, "arg_list") and ctx.arg_list():
+        if ctx.arg_list():
             args = [self.visit(e) for e in ctx.arg_list().expression()]
-        elif hasattr(ctx, "expression") and ctx.expression():
-            try:
-                args = [self.visit(e) for e in ctx.expression()]
-            except TypeError:
-                args = [self.visit(ctx.expression())]
-
+        
         # primer argumento esperado: secuencia o variable
-        seq_raw = args[0] if args else ""
+        if not args:
+            print(f"[WARN] Funcion '{func_name}' llamada sin argumentos")
+            return None
+            
+        seq_raw = args[0]
         kind = self._infer_kind(seq_raw, "DNA")
         seq = self._extract_seq(seq_raw)
 
@@ -243,11 +250,12 @@ class BiolingoExecutor(biolingoVisitor):
         if name == "complement":
             return self.fn_complement(seq, kind)
         if name == "reverse":
-            return self.fn_reverse(seq)
+            return self.fn_reverse(seq, kind)
         if name == "translate":
             return self.fn_translate(seq, kind)
 
         # si no coincide con nativa, devuelve el nombre (compatibilidad simple)
+        print(f"[WARN] Funcion '{func_name}' no reconocida")
         return func_name
 
     # ================================================================
@@ -258,36 +266,33 @@ class BiolingoExecutor(biolingoVisitor):
         Extrae la cadena biologica limpia desde formatos como:
           - DNA"ATGC" / RNA"AUGC" / PROTEIN"MKT*"
           - "ATGC"
-          - ATGC
-          - nombre de variable que contiene cualquiera de los casos anteriores
+          - ATGC (sin comillas, si es necesario)
         """
         if v is None:
             return ""
 
         s = str(v).strip()
-        print(f"[DEBUG] Extrayendo secuencia cruda 0: {s}")
-
-        # Si es el nombre de una variable, resolver su valor real recursivamente
-        if s in self.variables:
-            return self._extract_seq(self.variables[s])
-
-        # Casos tipados con comillas
+        
+        # Casos tipados con prefijo y comillas: DNA"ATGC"
         for prefix in ("DNA", "RNA", "PROTEIN"):
             if s.upper().startswith(prefix):
-                start = s.find('"')
-                end = s.rfind('"')
-                if start != -1 and end > start:
-                    return s[start + 1:end]
-                # fallback si por alguna razon no hay comillas
-                return s[len(prefix):].strip('"').strip()
-
-        # Caso: entre comillas
-        if (s.startswith('"') and s.endswith('"')) or (s.startswith("'") and s.endswith("'")):
+                # Formato esperado: PREFIX"SEQUENCE"
+                # Buscar primera y ultima comilla
+                first_quote = s.find('"')
+                last_quote = s.rfind('"')
+                
+                if first_quote != -1 and last_quote > first_quote:
+                    extracted = s[first_quote + 1:last_quote]
+                    return extracted
+                else:
+                    # Si no hay comillas, asumir que todo despues del prefijo es la secuencia
+                    return s[len(prefix):].strip()
+        
+        # Si viene entre comillas sin prefijo: "ATGC" -> ATGC
+        if s.startswith('"') and s.endswith('"') and len(s) > 1:
             return s[1:-1]
-
-        # Caso base: ya es una cadena "cruda"
-
-        print(f"[DEBUG] Extrayendo secuencia cruda 1: {s}")
+        
+        # Caso sin formato especial, devolver tal cual
         return s
 
     def _infer_kind(self, v, default_kind="DNA"):
@@ -295,6 +300,9 @@ class BiolingoExecutor(biolingoVisitor):
         Infere el tipo de la secuencia (DNA / RNA / PROTEIN) por prefijo textual.
         Si no encuentra prefijo, devuelve default_kind.
         """
+        if v is None:
+            return default_kind
+            
         s = str(v).strip().upper()
         if s.startswith("RNA"):
             return "RNA"
@@ -317,12 +325,10 @@ class BiolingoExecutor(biolingoVisitor):
         """
         s = seq or ""
         py_len = len(s)
-
-        print("Test", py_len)
         
         try:
             llvm_len = compute_length_llvm(s)
-            print(f"[LLVM] length({py_len} bp) = {llvm_len} (Python={py_len})")
+            print(f"[LLVM] length({len(s)} bp) = {llvm_len}")
             return llvm_len
         except Exception as e:
             print(f"[WARN] Backend LLVM length fallo, usando Python. Detalle: {e}")
@@ -347,12 +353,12 @@ class BiolingoExecutor(biolingoVisitor):
         # Implementacion original en Python (fallback)
         s = seq.upper()
         gc = sum(1 for c in s if c in ("G", "C"))
-        pct_py = (gc / len(s)) * 100.0
+        pct_py = (gc / len(s)) * 100.0 if len(s) > 0 else 0.0
 
         # Intentamos usar el backend LLVM
         try:
             pct_llvm = compute_gc_content_llvm(seq)
-            print(f"[LLVM] gc_content({len(seq)} bp) = {pct_llvm:.1f}% (Python={pct_py:.1f}%)")
+            print(f"[LLVM] gc_content({len(seq)} bp) = {pct_llvm:.1f}%")
             return f"{pct_llvm:.1f}%"
         except Exception as e:
             print(f"[WARN] Backend LLVM gc_content fallo, usando Python. Detalle: {e}")
@@ -366,17 +372,22 @@ class BiolingoExecutor(biolingoVisitor):
         """
         k = (kind or "DNA").upper()
         s = seq.upper()
+        
         if k == "RNA":
             table = str.maketrans("AUCG", "UAGC")
         else:
             table = str.maketrans("ATCG", "TAGC")
-        return s.translate(table)
+        
+        result_seq = s.translate(table)
+        return f'{k}"{result_seq}"'
 
-    def fn_reverse(self, seq: str) -> str:
+    def fn_reverse(self, seq: str, kind: str = "DNA") -> str:
         """
         reverse(seq) -> secuencia invertida (DNA/RNA/PROTEIN).
         """
-        return seq[::-1]
+        k = (kind or "DNA").upper()
+        reversed_seq = seq[::-1]
+        return f'{k}"{reversed_seq}"'
 
     def fn_translate(self, seq: str, kind: str) -> str:
         """
@@ -384,7 +395,8 @@ class BiolingoExecutor(biolingoVisitor):
         Si llega RNA, se transforma U->T. Si llega PROTEIN, se devuelve tal cual.
         """
         if kind == "PROTEIN":
-            return seq  # ya es proteina
+            return f'PROTEIN"{seq}"'
+            
         s = seq.upper().replace("U", "T")  # por si viene RNA
 
         codon_table = {
@@ -410,4 +422,5 @@ class BiolingoExecutor(biolingoVisitor):
         # Traduce por tripletes completos, codon desconocido -> 'X'
         for i in range(0, len(s) - len(s) % 3, 3):
             prot.append(codon_table.get(s[i:i+3], 'X'))
-        return "".join(prot)
+        result_prot = "".join(prot)
+        return f'PROTEIN"{result_prot}"'

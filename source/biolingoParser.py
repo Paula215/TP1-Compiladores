@@ -36,77 +36,77 @@ def serializedATN():
         292,8,25,1,26,1,26,1,27,1,27,1,28,1,28,1,28,1,28,1,28,3,28,303,8,
         28,1,29,1,29,1,29,1,30,1,30,1,30,0,2,34,40,31,0,2,4,6,8,10,12,14,
         16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,
-        60,0,8,1,0,64,65,2,0,4,4,32,36,1,0,37,39,1,0,40,41,1,0,46,48,1,0,
-        49,53,1,0,54,58,1,0,59,61,326,0,63,1,0,0,0,2,76,1,0,0,0,4,78,1,0,
-        0,0,6,86,1,0,0,0,8,91,1,0,0,0,10,95,1,0,0,0,12,104,1,0,0,0,14,113,
-        1,0,0,0,16,120,1,0,0,0,18,143,1,0,0,0,20,145,1,0,0,0,22,160,1,0,
-        0,0,24,162,1,0,0,0,26,165,1,0,0,0,28,168,1,0,0,0,30,176,1,0,0,0,
-        32,181,1,0,0,0,34,192,1,0,0,0,36,225,1,0,0,0,38,227,1,0,0,0,40,246,
-        1,0,0,0,42,262,1,0,0,0,44,265,1,0,0,0,46,273,1,0,0,0,48,280,1,0,
-        0,0,50,291,1,0,0,0,52,293,1,0,0,0,54,295,1,0,0,0,56,302,1,0,0,0,
-        58,304,1,0,0,0,60,307,1,0,0,0,62,64,3,2,1,0,63,62,1,0,0,0,64,65,
-        1,0,0,0,65,63,1,0,0,0,65,66,1,0,0,0,66,67,1,0,0,0,67,68,5,0,0,1,
-        68,1,1,0,0,0,69,77,3,4,2,0,70,77,3,6,3,0,71,77,3,20,10,0,72,77,3,
-        12,6,0,73,77,3,10,5,0,74,77,3,8,4,0,75,77,5,1,0,0,76,69,1,0,0,0,
-        76,70,1,0,0,0,76,71,1,0,0,0,76,72,1,0,0,0,76,73,1,0,0,0,76,74,1,
-        0,0,0,76,75,1,0,0,0,77,3,1,0,0,0,78,79,5,2,0,0,79,82,5,64,0,0,80,
-        81,5,3,0,0,81,83,5,65,0,0,82,80,1,0,0,0,82,83,1,0,0,0,83,84,1,0,
-        0,0,84,85,5,1,0,0,85,5,1,0,0,0,86,87,5,65,0,0,87,88,5,4,0,0,88,89,
-        3,40,20,0,89,90,5,1,0,0,90,7,1,0,0,0,91,92,5,5,0,0,92,93,3,40,20,
-        0,93,94,5,1,0,0,94,9,1,0,0,0,95,96,5,6,0,0,96,97,5,7,0,0,97,100,
-        3,22,11,0,98,99,5,8,0,0,99,101,3,16,8,0,100,98,1,0,0,0,100,101,1,
-        0,0,0,101,102,1,0,0,0,102,103,5,1,0,0,103,11,1,0,0,0,104,105,5,9,
-        0,0,105,106,5,10,0,0,106,109,3,40,20,0,107,108,5,11,0,0,108,110,
-        3,14,7,0,109,107,1,0,0,0,109,110,1,0,0,0,110,111,1,0,0,0,111,112,
-        5,1,0,0,112,13,1,0,0,0,113,118,5,12,0,0,114,115,5,13,0,0,115,116,
-        3,16,8,0,116,117,5,14,0,0,117,119,1,0,0,0,118,114,1,0,0,0,118,119,
-        1,0,0,0,119,15,1,0,0,0,120,125,3,18,9,0,121,122,5,15,0,0,122,124,
-        3,18,9,0,123,121,1,0,0,0,124,127,1,0,0,0,125,123,1,0,0,0,125,126,
-        1,0,0,0,126,17,1,0,0,0,127,125,1,0,0,0,128,129,5,16,0,0,129,130,
-        5,4,0,0,130,144,5,63,0,0,131,132,5,17,0,0,132,133,5,4,0,0,133,144,
-        5,63,0,0,134,135,5,18,0,0,135,136,5,4,0,0,136,144,5,63,0,0,137,138,
-        5,19,0,0,138,139,5,4,0,0,139,144,5,64,0,0,140,141,5,20,0,0,141,142,
-        5,4,0,0,142,144,5,63,0,0,143,128,1,0,0,0,143,131,1,0,0,0,143,134,
-        1,0,0,0,143,137,1,0,0,0,143,140,1,0,0,0,144,19,1,0,0,0,145,146,5,
-        21,0,0,146,147,5,22,0,0,147,148,5,23,0,0,148,150,3,22,11,0,149,151,
-        3,24,12,0,150,149,1,0,0,0,150,151,1,0,0,0,151,153,1,0,0,0,152,154,
-        3,26,13,0,153,152,1,0,0,0,153,154,1,0,0,0,154,156,1,0,0,0,155,157,
-        3,32,16,0,156,155,1,0,0,0,156,157,1,0,0,0,157,158,1,0,0,0,158,159,
-        5,1,0,0,159,21,1,0,0,0,160,161,7,0,0,0,161,23,1,0,0,0,162,163,5,
-        24,0,0,163,164,3,34,17,0,164,25,1,0,0,0,165,166,5,25,0,0,166,167,
+        60,0,8,1,0,64,65,2,0,4,4,32,36,1,0,41,43,2,0,40,40,44,44,1,0,46,
+        48,1,0,49,53,1,0,54,58,1,0,59,61,326,0,63,1,0,0,0,2,76,1,0,0,0,4,
+        78,1,0,0,0,6,86,1,0,0,0,8,91,1,0,0,0,10,95,1,0,0,0,12,104,1,0,0,
+        0,14,113,1,0,0,0,16,120,1,0,0,0,18,143,1,0,0,0,20,145,1,0,0,0,22,
+        160,1,0,0,0,24,162,1,0,0,0,26,165,1,0,0,0,28,168,1,0,0,0,30,176,
+        1,0,0,0,32,181,1,0,0,0,34,192,1,0,0,0,36,225,1,0,0,0,38,227,1,0,
+        0,0,40,246,1,0,0,0,42,262,1,0,0,0,44,265,1,0,0,0,46,273,1,0,0,0,
+        48,280,1,0,0,0,50,291,1,0,0,0,52,293,1,0,0,0,54,295,1,0,0,0,56,302,
+        1,0,0,0,58,304,1,0,0,0,60,307,1,0,0,0,62,64,3,2,1,0,63,62,1,0,0,
+        0,64,65,1,0,0,0,65,63,1,0,0,0,65,66,1,0,0,0,66,67,1,0,0,0,67,68,
+        5,0,0,1,68,1,1,0,0,0,69,77,3,4,2,0,70,77,3,6,3,0,71,77,3,20,10,0,
+        72,77,3,12,6,0,73,77,3,10,5,0,74,77,3,8,4,0,75,77,5,1,0,0,76,69,
+        1,0,0,0,76,70,1,0,0,0,76,71,1,0,0,0,76,72,1,0,0,0,76,73,1,0,0,0,
+        76,74,1,0,0,0,76,75,1,0,0,0,77,3,1,0,0,0,78,79,5,2,0,0,79,82,5,64,
+        0,0,80,81,5,3,0,0,81,83,5,65,0,0,82,80,1,0,0,0,82,83,1,0,0,0,83,
+        84,1,0,0,0,84,85,5,1,0,0,85,5,1,0,0,0,86,87,5,65,0,0,87,88,5,4,0,
+        0,88,89,3,40,20,0,89,90,5,1,0,0,90,7,1,0,0,0,91,92,5,5,0,0,92,93,
+        3,40,20,0,93,94,5,1,0,0,94,9,1,0,0,0,95,96,5,6,0,0,96,97,5,7,0,0,
+        97,100,3,22,11,0,98,99,5,8,0,0,99,101,3,16,8,0,100,98,1,0,0,0,100,
+        101,1,0,0,0,101,102,1,0,0,0,102,103,5,1,0,0,103,11,1,0,0,0,104,105,
+        5,9,0,0,105,106,5,10,0,0,106,109,3,40,20,0,107,108,5,11,0,0,108,
+        110,3,14,7,0,109,107,1,0,0,0,109,110,1,0,0,0,110,111,1,0,0,0,111,
+        112,5,1,0,0,112,13,1,0,0,0,113,118,5,12,0,0,114,115,5,13,0,0,115,
+        116,3,16,8,0,116,117,5,14,0,0,117,119,1,0,0,0,118,114,1,0,0,0,118,
+        119,1,0,0,0,119,15,1,0,0,0,120,125,3,18,9,0,121,122,5,15,0,0,122,
+        124,3,18,9,0,123,121,1,0,0,0,124,127,1,0,0,0,125,123,1,0,0,0,125,
+        126,1,0,0,0,126,17,1,0,0,0,127,125,1,0,0,0,128,129,5,16,0,0,129,
+        130,5,4,0,0,130,144,5,63,0,0,131,132,5,17,0,0,132,133,5,4,0,0,133,
+        144,5,63,0,0,134,135,5,18,0,0,135,136,5,4,0,0,136,144,5,63,0,0,137,
+        138,5,19,0,0,138,139,5,4,0,0,139,144,5,64,0,0,140,141,5,20,0,0,141,
+        142,5,4,0,0,142,144,5,63,0,0,143,128,1,0,0,0,143,131,1,0,0,0,143,
+        134,1,0,0,0,143,137,1,0,0,0,143,140,1,0,0,0,144,19,1,0,0,0,145,146,
+        5,21,0,0,146,147,5,22,0,0,147,148,5,23,0,0,148,150,3,22,11,0,149,
+        151,3,24,12,0,150,149,1,0,0,0,150,151,1,0,0,0,151,153,1,0,0,0,152,
+        154,3,26,13,0,153,152,1,0,0,0,153,154,1,0,0,0,154,156,1,0,0,0,155,
+        157,3,32,16,0,156,155,1,0,0,0,156,157,1,0,0,0,157,158,1,0,0,0,158,
+        159,5,1,0,0,159,21,1,0,0,0,160,161,7,0,0,0,161,23,1,0,0,0,162,163,
+        5,24,0,0,163,164,3,34,17,0,164,25,1,0,0,0,165,166,5,25,0,0,166,167,
         3,28,14,0,167,27,1,0,0,0,168,173,3,30,15,0,169,170,5,15,0,0,170,
         172,3,30,15,0,171,169,1,0,0,0,172,175,1,0,0,0,173,171,1,0,0,0,173,
         174,1,0,0,0,174,29,1,0,0,0,175,173,1,0,0,0,176,179,3,40,20,0,177,
         178,5,3,0,0,178,180,5,65,0,0,179,177,1,0,0,0,179,180,1,0,0,0,180,
         31,1,0,0,0,181,182,5,26,0,0,182,183,5,63,0,0,183,33,1,0,0,0,184,
-        185,6,17,-1,0,185,186,5,29,0,0,186,193,3,34,17,3,187,188,5,13,0,
+        185,6,17,-1,0,185,186,5,27,0,0,186,193,3,34,17,5,187,188,5,13,0,
         0,188,189,3,34,17,0,189,190,5,14,0,0,190,193,1,0,0,0,191,193,3,36,
         18,0,192,184,1,0,0,0,192,187,1,0,0,0,192,191,1,0,0,0,193,202,1,0,
-        0,0,194,195,10,5,0,0,195,196,5,27,0,0,196,201,3,34,17,6,197,198,
-        10,4,0,0,198,199,5,28,0,0,199,201,3,34,17,5,200,194,1,0,0,0,200,
+        0,0,194,195,10,2,0,0,195,196,5,28,0,0,196,201,3,34,17,3,197,198,
+        10,1,0,0,198,199,5,29,0,0,199,201,3,34,17,2,200,194,1,0,0,0,200,
         197,1,0,0,0,201,204,1,0,0,0,202,200,1,0,0,0,202,203,1,0,0,0,203,
         35,1,0,0,0,204,202,1,0,0,0,205,206,3,40,20,0,206,207,3,38,19,0,207,
         208,3,40,20,0,208,226,1,0,0,0,209,210,3,40,20,0,210,211,5,30,0,0,
         211,212,3,40,20,0,212,226,1,0,0,0,213,214,3,40,20,0,214,215,5,31,
-        0,0,215,216,3,40,20,0,216,217,5,27,0,0,217,218,3,40,20,0,218,226,
+        0,0,215,216,3,40,20,0,216,217,5,28,0,0,217,218,3,40,20,0,218,226,
         1,0,0,0,219,220,3,40,20,0,220,221,5,10,0,0,221,222,5,13,0,0,222,
         223,3,44,22,0,223,224,5,14,0,0,224,226,1,0,0,0,225,205,1,0,0,0,225,
         209,1,0,0,0,225,213,1,0,0,0,225,219,1,0,0,0,226,37,1,0,0,0,227,228,
-        7,1,0,0,228,39,1,0,0,0,229,230,6,20,-1,0,230,231,5,43,0,0,231,247,
-        3,40,20,9,232,233,5,44,0,0,233,247,3,40,20,8,234,235,5,45,0,0,235,
-        247,3,40,20,7,236,237,5,41,0,0,237,247,3,40,20,6,238,239,5,13,0,
-        0,239,240,3,40,20,0,240,241,5,14,0,0,241,247,1,0,0,0,242,247,3,46,
-        23,0,243,247,3,56,28,0,244,247,3,42,21,0,245,247,5,65,0,0,246,229,
-        1,0,0,0,246,232,1,0,0,0,246,234,1,0,0,0,246,236,1,0,0,0,246,238,
-        1,0,0,0,246,242,1,0,0,0,246,243,1,0,0,0,246,244,1,0,0,0,246,245,
-        1,0,0,0,247,259,1,0,0,0,248,249,10,12,0,0,249,250,7,2,0,0,250,258,
-        3,40,20,13,251,252,10,11,0,0,252,253,7,3,0,0,253,258,3,40,20,12,
-        254,255,10,10,0,0,255,256,5,42,0,0,256,258,5,65,0,0,257,248,1,0,
-        0,0,257,251,1,0,0,0,257,254,1,0,0,0,258,261,1,0,0,0,259,257,1,0,
-        0,0,259,260,1,0,0,0,260,41,1,0,0,0,261,259,1,0,0,0,262,263,7,4,0,
-        0,263,264,5,64,0,0,264,43,1,0,0,0,265,270,3,40,20,0,266,267,5,15,
-        0,0,267,269,3,40,20,0,268,266,1,0,0,0,269,272,1,0,0,0,270,268,1,
-        0,0,0,270,271,1,0,0,0,271,45,1,0,0,0,272,270,1,0,0,0,273,274,3,50,
+        7,1,0,0,228,39,1,0,0,0,229,230,6,20,-1,0,230,231,5,37,0,0,231,247,
+        3,40,20,12,232,233,5,38,0,0,233,247,3,40,20,11,234,235,5,39,0,0,
+        235,247,3,40,20,10,236,237,5,40,0,0,237,247,3,40,20,9,238,239,5,
+        13,0,0,239,240,3,40,20,0,240,241,5,14,0,0,241,247,1,0,0,0,242,247,
+        3,46,23,0,243,247,3,56,28,0,244,247,3,42,21,0,245,247,5,65,0,0,246,
+        229,1,0,0,0,246,232,1,0,0,0,246,234,1,0,0,0,246,236,1,0,0,0,246,
+        238,1,0,0,0,246,242,1,0,0,0,246,243,1,0,0,0,246,244,1,0,0,0,246,
+        245,1,0,0,0,247,259,1,0,0,0,248,249,10,3,0,0,249,250,7,2,0,0,250,
+        258,3,40,20,4,251,252,10,2,0,0,252,253,7,3,0,0,253,258,3,40,20,3,
+        254,255,10,1,0,0,255,256,5,45,0,0,256,258,5,65,0,0,257,248,1,0,0,
+        0,257,251,1,0,0,0,257,254,1,0,0,0,258,261,1,0,0,0,259,257,1,0,0,
+        0,259,260,1,0,0,0,260,41,1,0,0,0,261,259,1,0,0,0,262,263,7,4,0,0,
+        263,264,5,64,0,0,264,43,1,0,0,0,265,270,3,40,20,0,266,267,5,15,0,
+        0,267,269,3,40,20,0,268,266,1,0,0,0,269,272,1,0,0,0,270,268,1,0,
+        0,0,270,271,1,0,0,0,271,45,1,0,0,0,272,270,1,0,0,0,273,274,3,50,
         25,0,274,276,5,13,0,0,275,277,3,48,24,0,276,275,1,0,0,0,276,277,
         1,0,0,0,277,278,1,0,0,0,278,279,5,14,0,0,279,47,1,0,0,0,280,285,
         3,40,20,0,281,282,5,15,0,0,282,284,3,40,20,0,283,281,1,0,0,0,284,
@@ -117,7 +117,7 @@ def serializedATN():
         63,0,0,298,303,5,64,0,0,299,303,5,62,0,0,300,303,3,58,29,0,301,303,
         3,60,30,0,302,297,1,0,0,0,302,298,1,0,0,0,302,299,1,0,0,0,302,300,
         1,0,0,0,302,301,1,0,0,0,303,57,1,0,0,0,304,305,5,63,0,0,305,306,
-        5,39,0,0,306,59,1,0,0,0,307,308,7,7,0,0,308,61,1,0,0,0,25,65,76,
+        5,43,0,0,306,59,1,0,0,0,307,308,7,7,0,0,308,61,1,0,0,0,25,65,76,
         82,100,109,118,125,143,150,153,156,173,179,192,200,202,225,246,257,
         259,270,276,285,291,302
     ]
@@ -137,10 +137,10 @@ class biolingoParser ( Parser ):
                      "'IN'", "'USING'", "'markov'", "'('", "')'", "','", 
                      "'order'", "'threshold'", "'min_length'", "'model'", 
                      "'window'", "'FIND'", "'sequences'", "'FROM'", "'WHERE'", 
-                     "'SELECT'", "'LIMIT'", "'AND'", "'OR'", "'NOT'", "'CONTAINS'", 
+                     "'SELECT'", "'LIMIT'", "'NOT'", "'AND'", "'OR'", "'CONTAINS'", 
                      "'BETWEEN'", "'!='", "'<'", "'<='", "'>'", "'>='", 
-                     "'*'", "'/'", "'%'", "'+'", "'-'", "'.'", "'~'", "'<-'", 
-                     "'~<-'", "'DNA'", "'RNA'", "'PROTEIN'", "'length'", 
+                     "'~'", "'<-'", "'~<-'", "'-'", "'*'", "'/'", "'%'", 
+                     "'+'", "'.'", "'DNA'", "'RNA'", "'PROTEIN'", "'length'", 
                      "'gc_content'", "'complement'", "'reverse'", "'translate'", 
                      "'COUNT'", "'AVG'", "'MIN'", "'MAX'", "'SUM'" ]
 
@@ -158,9 +158,9 @@ class biolingoParser ( Parser ):
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "DNA_SEQ", 
-                      "RNA_SEQ", "PROTEIN_SEQ", "BOOLEAN", "NUMBER", "STRING", 
-                      "ID", "LINE_COMMENT", "BLOCK_COMMENT", "WS" ]
+                      "<INVALID>", "<INVALID>", "<INVALID>", "DNA_LITERAL", 
+                      "RNA_LITERAL", "PROTEIN_LITERAL", "BOOLEAN", "NUMBER", 
+                      "STRING", "ID", "LINE_COMMENT", "BLOCK_COMMENT", "WS" ]
 
     RULE_program = 0
     RULE_stmt = 1
@@ -262,9 +262,9 @@ class biolingoParser ( Parser ):
     T__55=56
     T__56=57
     T__57=58
-    DNA_SEQ=59
-    RNA_SEQ=60
-    PROTEIN_SEQ=61
+    DNA_LITERAL=59
+    RNA_LITERAL=60
+    PROTEIN_LITERAL=61
     BOOLEAN=62
     NUMBER=63
     STRING=64
@@ -1465,9 +1465,9 @@ class biolingoParser ( Parser ):
             la_ = self._interp.adaptivePredict(self._input,13,self._ctx)
             if la_ == 1:
                 self.state = 185
-                self.match(biolingoParser.T__28)
+                self.match(biolingoParser.T__26)
                 self.state = 186
-                self.condition(3)
+                self.condition(5)
                 pass
 
             elif la_ == 2:
@@ -1501,26 +1501,26 @@ class biolingoParser ( Parser ):
                         localctx = biolingoParser.ConditionContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_condition)
                         self.state = 194
-                        if not self.precpred(self._ctx, 5):
+                        if not self.precpred(self._ctx, 2):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
                         self.state = 195
-                        self.match(biolingoParser.T__26)
+                        self.match(biolingoParser.T__27)
                         self.state = 196
-                        self.condition(6)
+                        self.condition(3)
                         pass
 
                     elif la_ == 2:
                         localctx = biolingoParser.ConditionContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_condition)
                         self.state = 197
-                        if not self.precpred(self._ctx, 4):
+                        if not self.precpred(self._ctx, 1):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
                         self.state = 198
-                        self.match(biolingoParser.T__27)
+                        self.match(biolingoParser.T__28)
                         self.state = 199
-                        self.condition(5)
+                        self.condition(2)
                         pass
 
              
@@ -1616,7 +1616,7 @@ class biolingoParser ( Parser ):
                 self.state = 215
                 self.expression(0)
                 self.state = 216
-                self.match(biolingoParser.T__26)
+                self.match(biolingoParser.T__27)
                 self.state = 217
                 self.expression(0)
                 pass
@@ -1703,6 +1703,97 @@ class biolingoParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+
+        def getRuleIndex(self):
+            return biolingoParser.RULE_expression
+
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+
+
+    class UnaryReverseContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a biolingoParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self):
+            return self.getTypedRuleContext(biolingoParser.ExpressionContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterUnaryReverse" ):
+                listener.enterUnaryReverse(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitUnaryReverse" ):
+                listener.exitUnaryReverse(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnaryReverse" ):
+                return visitor.visitUnaryReverse(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class GroupContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a biolingoParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self):
+            return self.getTypedRuleContext(biolingoParser.ExpressionContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterGroup" ):
+                listener.enterGroup(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitGroup" ):
+                listener.exitGroup(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitGroup" ):
+                return visitor.visitGroup(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class FuncCallContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a biolingoParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def function_call(self):
+            return self.getTypedRuleContext(biolingoParser.Function_callContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFuncCall" ):
+                listener.enterFuncCall(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFuncCall" ):
+                listener.exitFuncCall(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFuncCall" ):
+                return visitor.visitFuncCall(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class MulDivModContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a biolingoParser.ExpressionContext
+            super().__init__(parser)
+            self.op = None # Token
+            self.copyFrom(ctx)
+
         def expression(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(biolingoParser.ExpressionContext)
@@ -1710,35 +1801,222 @@ class biolingoParser ( Parser ):
                 return self.getTypedRuleContext(biolingoParser.ExpressionContext,i)
 
 
-        def function_call(self):
-            return self.getTypedRuleContext(biolingoParser.Function_callContext,0)
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterMulDivMod" ):
+                listener.enterMulDivMod(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitMulDivMod" ):
+                listener.exitMulDivMod(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMulDivMod" ):
+                return visitor.visitMulDivMod(self)
+            else:
+                return visitor.visitChildren(self)
 
 
-        def literal(self):
-            return self.getTypedRuleContext(biolingoParser.LiteralContext,0)
+    class IdExprContext(ExpressionContext):
 
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a biolingoParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def ID(self):
+            return self.getToken(biolingoParser.ID, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterIdExpr" ):
+                listener.enterIdExpr(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitIdExpr" ):
+                listener.exitIdExpr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIdExpr" ):
+                return visitor.visitIdExpr(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class AddSubContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a biolingoParser.ExpressionContext
+            super().__init__(parser)
+            self.op = None # Token
+            self.copyFrom(ctx)
+
+        def expression(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(biolingoParser.ExpressionContext)
+            else:
+                return self.getTypedRuleContext(biolingoParser.ExpressionContext,i)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAddSub" ):
+                listener.enterAddSub(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAddSub" ):
+                listener.exitAddSub(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAddSub" ):
+                return visitor.visitAddSub(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class BioSeqExprContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a biolingoParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
 
         def bio_seq(self):
             return self.getTypedRuleContext(biolingoParser.Bio_seqContext,0)
 
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBioSeqExpr" ):
+                listener.enterBioSeqExpr(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBioSeqExpr" ):
+                listener.exitBioSeqExpr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBioSeqExpr" ):
+                return visitor.visitBioSeqExpr(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class UnaryComplementContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a biolingoParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self):
+            return self.getTypedRuleContext(biolingoParser.ExpressionContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterUnaryComplement" ):
+                listener.enterUnaryComplement(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitUnaryComplement" ):
+                listener.exitUnaryComplement(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnaryComplement" ):
+                return visitor.visitUnaryComplement(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class LiteralExprContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a biolingoParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def literal(self):
+            return self.getTypedRuleContext(biolingoParser.LiteralContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterLiteralExpr" ):
+                listener.enterLiteralExpr(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitLiteralExpr" ):
+                listener.exitLiteralExpr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLiteralExpr" ):
+                return visitor.visitLiteralExpr(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class UnaryMinusContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a biolingoParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self):
+            return self.getTypedRuleContext(biolingoParser.ExpressionContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterUnaryMinus" ):
+                listener.enterUnaryMinus(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitUnaryMinus" ):
+                listener.exitUnaryMinus(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnaryMinus" ):
+                return visitor.visitUnaryMinus(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class UnaryRevComplementContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a biolingoParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self):
+            return self.getTypedRuleContext(biolingoParser.ExpressionContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterUnaryRevComplement" ):
+                listener.enterUnaryRevComplement(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitUnaryRevComplement" ):
+                listener.exitUnaryRevComplement(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnaryRevComplement" ):
+                return visitor.visitUnaryRevComplement(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class FieldAccessContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a biolingoParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self):
+            return self.getTypedRuleContext(biolingoParser.ExpressionContext,0)
+
         def ID(self):
             return self.getToken(biolingoParser.ID, 0)
 
-        def getRuleIndex(self):
-            return biolingoParser.RULE_expression
-
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExpression" ):
-                listener.enterExpression(self)
+            if hasattr( listener, "enterFieldAccess" ):
+                listener.enterFieldAccess(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExpression" ):
-                listener.exitExpression(self)
+            if hasattr( listener, "exitFieldAccess" ):
+                listener.exitFieldAccess(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitExpression" ):
-                return visitor.visitExpression(self)
+            if hasattr( visitor, "visitFieldAccess" ):
+                return visitor.visitFieldAccess(self)
             else:
                 return visitor.visitChildren(self)
 
@@ -1758,34 +2036,50 @@ class biolingoParser ( Parser ):
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,17,self._ctx)
             if la_ == 1:
+                localctx = biolingoParser.UnaryComplementContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+
                 self.state = 230
-                self.match(biolingoParser.T__42)
+                self.match(biolingoParser.T__36)
                 self.state = 231
-                self.expression(9)
+                self.expression(12)
                 pass
 
             elif la_ == 2:
+                localctx = biolingoParser.UnaryReverseContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 232
-                self.match(biolingoParser.T__43)
+                self.match(biolingoParser.T__37)
                 self.state = 233
-                self.expression(8)
+                self.expression(11)
                 pass
 
             elif la_ == 3:
+                localctx = biolingoParser.UnaryRevComplementContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 234
-                self.match(biolingoParser.T__44)
+                self.match(biolingoParser.T__38)
                 self.state = 235
-                self.expression(7)
+                self.expression(10)
                 pass
 
             elif la_ == 4:
+                localctx = biolingoParser.UnaryMinusContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 236
-                self.match(biolingoParser.T__40)
+                self.match(biolingoParser.T__39)
                 self.state = 237
-                self.expression(6)
+                self.expression(9)
                 pass
 
             elif la_ == 5:
+                localctx = biolingoParser.GroupContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 238
                 self.match(biolingoParser.T__12)
                 self.state = 239
@@ -1795,21 +2089,33 @@ class biolingoParser ( Parser ):
                 pass
 
             elif la_ == 6:
+                localctx = biolingoParser.FuncCallContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 242
                 self.function_call()
                 pass
 
             elif la_ == 7:
+                localctx = biolingoParser.LiteralExprContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 243
                 self.literal()
                 pass
 
             elif la_ == 8:
+                localctx = biolingoParser.BioSeqExprContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 244
                 self.bio_seq()
                 pass
 
             elif la_ == 9:
+                localctx = biolingoParser.IdExprContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 245
                 self.match(biolingoParser.ID)
                 pass
@@ -1828,50 +2134,52 @@ class biolingoParser ( Parser ):
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,18,self._ctx)
                     if la_ == 1:
-                        localctx = biolingoParser.ExpressionContext(self, _parentctx, _parentState)
+                        localctx = biolingoParser.MulDivModContext(self, biolingoParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
                         self.state = 248
-                        if not self.precpred(self._ctx, 12):
+                        if not self.precpred(self._ctx, 3):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 12)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
                         self.state = 249
+                        localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 962072674304) != 0)):
-                            self._errHandler.recoverInline(self)
+                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 15393162788864) != 0)):
+                            localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
                         self.state = 250
-                        self.expression(13)
+                        self.expression(4)
                         pass
 
                     elif la_ == 2:
-                        localctx = biolingoParser.ExpressionContext(self, _parentctx, _parentState)
+                        localctx = biolingoParser.AddSubContext(self, biolingoParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
                         self.state = 251
-                        if not self.precpred(self._ctx, 11):
+                        if not self.precpred(self._ctx, 2):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 11)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
                         self.state = 252
+                        localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not(_la==40 or _la==41):
-                            self._errHandler.recoverInline(self)
+                        if not(_la==40 or _la==44):
+                            localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
                         self.state = 253
-                        self.expression(12)
+                        self.expression(3)
                         pass
 
                     elif la_ == 3:
-                        localctx = biolingoParser.ExpressionContext(self, _parentctx, _parentState)
+                        localctx = biolingoParser.FieldAccessContext(self, biolingoParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
                         self.state = 254
-                        if not self.precpred(self._ctx, 10):
+                        if not self.precpred(self._ctx, 1):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 10)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
                         self.state = 255
-                        self.match(biolingoParser.T__41)
+                        self.match(biolingoParser.T__44)
                         self.state = 256
                         self.match(biolingoParser.ID)
                         pass
@@ -2058,7 +2366,7 @@ class biolingoParser ( Parser ):
             self.state = 276
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if ((((_la - 13)) & ~0x3f) == 0 and ((1 << (_la - 13)) & 9007198449434625) != 0):
+            if ((((_la - 13)) & ~0x3f) == 0 and ((1 << (_la - 13)) & 9007190916464641) != 0):
                 self.state = 275
                 self.arg_list()
 
@@ -2444,7 +2752,7 @@ class biolingoParser ( Parser ):
             self.state = 304
             self.match(biolingoParser.NUMBER)
             self.state = 305
-            self.match(biolingoParser.T__38)
+            self.match(biolingoParser.T__42)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2461,14 +2769,14 @@ class biolingoParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def DNA_SEQ(self):
-            return self.getToken(biolingoParser.DNA_SEQ, 0)
+        def DNA_LITERAL(self):
+            return self.getToken(biolingoParser.DNA_LITERAL, 0)
 
-        def RNA_SEQ(self):
-            return self.getToken(biolingoParser.RNA_SEQ, 0)
+        def RNA_LITERAL(self):
+            return self.getToken(biolingoParser.RNA_LITERAL, 0)
 
-        def PROTEIN_SEQ(self):
-            return self.getToken(biolingoParser.PROTEIN_SEQ, 0)
+        def PROTEIN_LITERAL(self):
+            return self.getToken(biolingoParser.PROTEIN_LITERAL, 0)
 
         def getRuleIndex(self):
             return biolingoParser.RULE_sequence_literal
@@ -2527,24 +2835,24 @@ class biolingoParser ( Parser ):
 
     def condition_sempred(self, localctx:ConditionContext, predIndex:int):
             if predIndex == 0:
-                return self.precpred(self._ctx, 5)
+                return self.precpred(self._ctx, 2)
          
 
             if predIndex == 1:
-                return self.precpred(self._ctx, 4)
+                return self.precpred(self._ctx, 1)
          
 
     def expression_sempred(self, localctx:ExpressionContext, predIndex:int):
             if predIndex == 2:
-                return self.precpred(self._ctx, 12)
+                return self.precpred(self._ctx, 3)
          
 
             if predIndex == 3:
-                return self.precpred(self._ctx, 11)
+                return self.precpred(self._ctx, 2)
          
 
             if predIndex == 4:
-                return self.precpred(self._ctx, 10)
+                return self.precpred(self._ctx, 1)
          
 
 

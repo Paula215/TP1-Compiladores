@@ -252,12 +252,17 @@ def compute_gc_content_llvm(seq: str) -> float:
     # JIT: crear engine por módulo, ejecutar y remover módulo
     engine = _create_execution_engine_for_module(llvm_mod)
     try:
-        func_ptr = engine.get_function_address("seq_length")  # o seq_length
+        # 1. FIX: Buscar el nombre correcto de la función
+        func_ptr = engine.get_function_address("gc_content")  
         if func_ptr == 0:
             raise RuntimeError("No se obtuvo la dirección de la función.")
-        cfunc = ctypes.CFUNCTYPE(ctypes.c_int32)(func_ptr)  # ajustar tipo
+        
+        # 2. FIX: Usar el tipo de retorno correcto (ctypes.c_double para f64)
+        cfunc = ctypes.CFUNCTYPE(ctypes.c_double)(func_ptr)  
         result = cfunc()
-        return int(result)
+        
+        # 3. FIX: Retornar como float
+        return float(result)
     finally:
         # remover módulo (seguro aún si engine fue creado con el módulo)
         try:
@@ -327,14 +332,13 @@ def compute_length_llvm(seq: str) -> int:
 
     engine = _create_execution_engine_for_module(llvm_mod)
     try:
-        func_ptr = engine.get_function_address("gc_content")  
+        func_ptr = engine.get_function_address("seq_length")  
         if func_ptr == 0:
             raise RuntimeError("No se obtuvo la dirección de la función.")
-        cfunc = ctypes.CFUNCTYPE(ctypes.c_double)(func_ptr)  
+        cfunc = ctypes.CFUNCTYPE(ctypes.c_int32)(func_ptr)  
         result = cfunc()
-        return float(result)
+        return int(result)
     finally:
-        # remover módulo (seguro aún si engine fue creado con el módulo)
         try:
             engine.remove_module(llvm_mod)
         except Exception:
